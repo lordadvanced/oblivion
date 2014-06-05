@@ -1,0 +1,76 @@
+/* here you can put your own css to customize and override the theme */
+/*
+	4d90fe
+	0044B0
+	88B4FC
+*/
+.page-sidebar-menu{
+	background-color:#88B4FC;
+	
+}
+.colcon{  
+border-radius: 5px; box-shadow: 0 1px 1px #beaf85;
+}
+/*btn order*/
+.btn.order-stripe {
+	border-left: 3px solid #428bca;
+}/*order*/
+.btn.order {
+  color: white;  
+  text-shadow: none;	
+  background-color: #285FC7;
+}
+.btn.order:hover, 
+.btn.order:focus, 
+.btn.order:active,
+.btn.order.active,
+.btn.order[disabled],
+.btn.order.disabled {  
+  background-color: #0044B0 !important;
+  color: #fff !important;
+  outline: none !important;
+}
+
+.btn-group .btn.order.dropdown-toggle {
+  background-color: #285FC7 !important;
+}
+.btn-group .btn.order:hover, 
+.btn-group .btn.order:focus, 
+.btn-group .btn.order:active, 
+.btn-group .btn.order.active, 
+.btn-group .btn.order.disabled,
+.btn-group .btn.order[disabled] { 
+  background-color: #0044B0 !important;
+  color: #fff !important;
+  outline: none !important;
+}
+
+/* badge */
+.badge.green{background-color: #9cd159;}
+.badge.orange{background-color: #fa7753;}
+
+div#login {
+background-color: #FFFFFF !important;
+color: #000;
+font-family: 'Open Sans', sans-serif;
+padding: 0px !important;
+margin: 0px !important;
+font-size: 13px;
+direction: ltr;
+}
+body{
+    background: white !important;
+}
+.login .content {
+background-color: whitesmoke;
+border:none !important;
+}
+.login .content .form-actions {
+    background: whitesmoke !important;
+}
+.login .content .input-icon {
+border-left: 2px solid #2381e9 !important;
+}
+div.errorMessage {
+color: red;
+}
