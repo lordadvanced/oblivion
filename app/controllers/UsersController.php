@@ -75,7 +75,17 @@ class UsersController extends ControllerBase
                     'rollno' => $this->request->getPost('rollno'),
                     'phone' => $this->request->getPost('phone'));
                 $return = $this->get_server_request($data, $url);
-                $data_login = json_decode($return);
+                $data_login = $this->objectToArray(json_decode($return));
+                if($data_login['message']=="REGISTER_FAIL" && strpos($data_login['error'],"duplicate key")){
+                    $this->flashSession->error("Your register email have been existed!");
+                    return $this->response->redirect("users/login");
+                }else if($data_login['message']=="REGISTER_SUCCESS"){
+                    $this->flashSession->success("Your register is successful!");
+                    return $this->response->redirect("users/login");
+                }else{
+                    $this->flashSession->error('Services Ðie');
+                    return $this->response->redirect("users/login");
+                }
             }
             catch (ErrorException $e) {
                 $message = $e->getMessage();
@@ -104,8 +114,12 @@ class UsersController extends ControllerBase
                     $token = array('authToken' => $data_login['authToken']);
                     $url_get_profile = $config->utdgame->user_profile;
                     $user_info = $this->get_server_request($token, $url_get_profile);
-                    die;
-                    return $this->response->redirect("index/index");
+                    $user_data_info = $this->objectToArray(json_decode($user_info))['user'];
+                    //setup session
+                    $this->session->set("name", $user_data_info['name']);
+                    $this->session->set("role", $user_data_info['role']);
+                    $this->session->set("accessCode", $user_data_info['accessCode']);
+                    return $this->response->redirect("home/index");
                 } else {
                     $this->flashSession->error("Your login detail is incorrect!");
                     return $this->response->redirect("users/login");
@@ -121,7 +135,7 @@ class UsersController extends ControllerBase
     public function logoutAction()
     {
         $this->session->destroy();
-        $this->response->redirect("/users/login", true)->send();
+        $this->response->redirect("/home/index", true)->send();
     }
     public function accessAction()
     {

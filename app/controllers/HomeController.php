@@ -12,11 +12,11 @@ class HomeController extends ControllerBase
 
     public function indexAction()
     {
-        $session_username = $this->session->get("fu_username");
-        //        if(!isset($session_username)){
-        //            $this->response->redirect("users/login");
-        //        }
-
+        $session_username = $this->session->get("accessCode");
+//                if(!isset($session_username)){
+//                    $this->response->redirect("users/login");
+//                }
+        
         //if (!$this->request->isPost()) {
         //            $this->flash->notice('This is a sample application of the Phalcon PHP Framework.
         //                Please don\'t provide us any personal information. Thanks');
@@ -30,7 +30,7 @@ class HomeController extends ControllerBase
     public function logoutAction()
     {
         $this->session->destroy();
-        $this->response->redirect("/home/login", true)->send();
+        $this->response->redirect("/home/index", true)->send();
     }
     public function accessAction()
     {

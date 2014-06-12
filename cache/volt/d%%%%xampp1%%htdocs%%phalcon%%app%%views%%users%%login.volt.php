@@ -15,7 +15,7 @@
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="index.html">
-        <img src="../assets/img/logo.jpg" alt="" style="margin-top:-40px;"/>
+        <img src="../assets/img/logo.jpg" alt="" />
     </a>
 </div>
 <!-- END LOGO -->

@@ -44,33 +44,51 @@ border-radius: 5px; box-shadow: 0 1px 1px #beaf85;
   color: #fff !important;
   outline: none !important;
 }
-
+/*image hot pick*/
+.hotpick img{
+	max-height:250px;
+	width:100%;
+}
 /* badge */
 .badge.green{background-color: #9cd159;}
 .badge.orange{background-color: #fa7753;}
 
-div#login {
-background-color: #FFFFFF !important;
-color: #000;
-font-family: 'Open Sans', sans-serif;
-padding: 0px !important;
-margin: 0px !important;
-font-size: 13px;
-direction: ltr;
+/*	QUESTION AND ANSWER*/
+.question {color:red;}
+/*TABLE*/
+
+.history table,th,td
+{
+border:1px solid black;
+border-collapse:collapse;
 }
-body{
-    background: white !important;
-}
-.login .content {
-background-color: whitesmoke;
-border:none !important;
-}
-.login .content .form-actions {
-    background: whitesmoke !important;
-}
-.login .content .input-icon {
-border-left: 2px solid #2381e9 !important;
+.history th,td
+{
+padding:5px;
 }
 div.errorMessage {
 color: red;
+font-weight: bold;
+}
+div.successMessage {
+color: green;
+font-weight: bold;
+}
+
+@media (max-width: 480px)
+.login .logo img{
+max-width: 100%;
+height: auto;
+}
+.login .logo {
+margin: 0 auto;
+margin-top: 0px !important;
+padding: 15px;
+text-align: center;
+}
+.login .content {
+background-color: whitesmoke !important;
+}
+.login .content .form-actions{
+background-color: whitesmoke !important;
 }

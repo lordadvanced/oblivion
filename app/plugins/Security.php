@@ -52,7 +52,8 @@ class Security extends Plugin
                 'food' => array('listfood','index'),
    	            'users' => array('index','login','logout'),
 				'session' => array('index', 'register', 'start', 'end'),
-				'contact' => array('index', 'send')
+				'contact' => array('index', 'send'),
+                'management'=>array('index'),
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);

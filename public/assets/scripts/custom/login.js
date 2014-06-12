@@ -1,32 +1,5 @@
 var Login = function () {
-    function submit_login(){
-            jQuery.ajax({
-					type:"POST",
-		    		url:"/users/login",
-		    		async: false,
-		    		data:"email="+('#email').val()+"password="+('#password').val(),
-		    		beforeSend:function(result){
-		    			$('#loading').val('1');
-		    		},
-		    		success : function(result){
-			    		if(result == ''){
-			    			$('#more').remove();
-			    		}else{	
-			    
-			    			$('#exist_product_id').remove();
-			    			$('#loading').before(result);
-		    				$('#more').html('Thêm game');
-		    				$('#page').val(Number($('#page').val()) + 1);
-			    		}
-		    		},
-		    		error : function(result){
-		    			$('result').remove();
-		    		},
-		    		complete: function(){
-		    			$('#loading').val('0');
-					}
-				});
-}
+
 	var handleLogin = function() {
 
 		$('.login-form').validate({
@@ -125,7 +98,7 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                submit_login();
+	                form.submit();
 	            }
 	        });
 
@@ -259,7 +232,6 @@ var Login = function () {
 	        });
 
 	        jQuery('#register-btn').click(function () {
-	        
 	            jQuery('.login-form').hide();
 	            jQuery('.register-form').show();
 	        });
