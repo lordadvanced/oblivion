@@ -1,5 +1,7 @@
 <?php
-require_once ('/../app/plugins/recaptchalib.php');
+$config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
+$path = $config->application->basePath;
+require_once ($path.'/app/plugins/recaptchalib.php');
 class UsersController extends ControllerBase
 {
     public function initialize()

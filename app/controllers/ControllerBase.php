@@ -24,13 +24,14 @@ class ControllerBase extends Phalcon\Mvc\Controller
     //Ask browser what is the best language
    // $language = $this->request->get('lang');
    $language ="en";
-
+     $config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
+    $path = $config->application->basePath;
     //Check if we have a translation file for that lang
-    if (file_exists("/../messages/".$language.".php")) {
-       require "/../messages/".$language.".php";
+    if (file_exists($path."/app/messages/".$language.".php")) {
+       require $path."/app/messages/".$language.".php";
     } else {
        // fallback to some default
-       require "/../messages/en.php";
+       require $path."/app/messages/en.php";
     }
 
     //Return a translation object

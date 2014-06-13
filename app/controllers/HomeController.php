@@ -1,5 +1,5 @@
 <?php
-require_once ('/../app/plugins/LightOpenID/openid.php');
+//require_once ('/../app/plugins/LightOpenID/openid.php');
 class HomeController extends ControllerBase
 {
     public function initialize()
