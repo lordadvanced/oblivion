@@ -1,7 +1,7 @@
 <?php
 $config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
 $path = $config->application->basePath;
-require_once ($path.'/app/plugins/recaptchalib.php');
+require_once ($path. '/app/plugins/recaptchalib.php');
 class UsersController extends ControllerBase
 {
     public function initialize()
@@ -97,7 +97,9 @@ class UsersController extends ControllerBase
     }
     public function loginAction()
     {
-        require_once ('/../plugins/recaptchalib.php');
+        $config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
+        $path = $config->application->basePath;
+        require_once ($path.'/app/plugins/recaptchalib.php');
         if (isset($session_username)) {
             $this->response->redirect('index/index');
         }
@@ -114,9 +116,14 @@ class UsersController extends ControllerBase
                 $data_login = $this->objectToArray(json_decode($return));
                 if ($data_login['message'] == "LOGIN_SUCCESS") {
                     $token = array('authToken' => $data_login['authToken']);
+//                    print_r($token);
+//                    die;
                     $url_get_profile = $config->utdgame->user_profile;
                     $user_info = $this->get_server_request($token, $url_get_profile);
-                    $user_data_info = $this->objectToArray(json_decode($user_info))['user'];
+                    $user_data_info = $this->objectToArray(json_decode($user_info));
+                    $user_data_info = $user_data_info['user'];
+        //            print_r($user_data_info);
+//                    die;
                     //setup session
                     $this->session->set("name", $user_data_info['name']);
                     $this->session->set("role", $user_data_info['role']);

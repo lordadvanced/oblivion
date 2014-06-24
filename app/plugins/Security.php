@@ -28,19 +28,24 @@ class Security extends Plugin
 
 			//Register roles
 			$roles = array(
-				'users' => new Phalcon\Acl\Role('Users'),
-				'guests' => new Phalcon\Acl\Role('Guests')
+                'guest' => new Phalcon\Acl\Role('guest'),
+				'user' => new Phalcon\Acl\Role('user'),
+				'manager' => new Phalcon\Acl\Role('manager')
 			);
 			foreach ($roles as $role) {
 				$acl->addRole($role);
 			}
+            //Users Area resources
+            $usersResources = array(
+           	    'account'=> array('index'),
+			);
+            foreach ($usersResources as $resource => $actions) {
+				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
+			}
 
-			//Private area resources
+			//Manager area resources
 			$privateResources = array(
-				'companies' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-				'products' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-				'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-				'invoices' => array('index', 'profile')
+				'management' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 			);
 			foreach ($privateResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -49,11 +54,7 @@ class Security extends Plugin
 			//Public area resources
 			$publicResources = array(
 				'home' => array('index'),
-                'food' => array('listfood','index'),
    	            'users' => array('index','login','logout'),
-				'session' => array('index', 'register', 'start', 'end'),
-				'contact' => array('index', 'send'),
-                'management'=>array('index'),
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -69,7 +70,7 @@ class Security extends Plugin
 			//Grant acess to private area to role Users
 			foreach ($privateResources as $resource => $actions) {
 				foreach ($actions as $action){
-					$acl->allow('Users', $resource, $action);
+					$acl->allow('user', $resource, $action);
 				}
 			}
 
@@ -85,14 +86,15 @@ class Security extends Plugin
 	 */
 	public function beforeDispatch(Event $event, Dispatcher $dispatcher)
 	{
+        
+		$auth = $this->session->get('role');
 
-		$auth = $this->session->get('auth');
 		if (!$auth){
-			$role = 'Guests';
+			$role = 'guest';
 		} else {
-			$role = 'Users';
+			$role = $auth;
 		}
-
+       // echo $role;
 		$controller = $dispatcher->getControllerName();
 		$action = $dispatcher->getActionName();
 

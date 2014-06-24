@@ -1,0 +1,52 @@
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 308px;"><ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200" style="overflow: hidden; width: auto; height: 308px;">
+				<li class="sidebar-toggler-wrapper">
+
+					<div class="sidebar-toggler hidden-phone">
+					</div>
+					
+				</li>
+				<li class="active ">
+					<a href="/home/index">
+						<i class="fa fa-home"></i>
+						<span class="title">
+				            <?php echo $t->_("home");?>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="Kitchen_order.html">
+						<i class="fa fa-shopping-cart"></i>
+						<span class="title">
+						 <?php echo $t->_("order");?>
+						</span>
+					</a></li>
+				<li>
+					<a href="Kitchen_pay.html">
+						<i class="fa fa-gift"></i>
+						<span class="title">
+							 <?php echo $t->_("payment");?>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="/home/feedback">
+						<i class="fa fa-comment"></i>
+						<span class="title">
+							 <?php echo $t->_("feedback");?>
+						</span>
+					</a></li>
+				    <li class="last ">
+					<a href="/account/index">
+						<i class="fa fa-user"></i>
+						<span class="title">
+						 <?php echo $t->_("account");?>
+						</span>
+					</a></li>
+				
+			</ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.3; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 308px; background: rgb(161, 178, 189);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+
+		</div>
+	</div>

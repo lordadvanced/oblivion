@@ -67,7 +67,7 @@
 
 			<ul class="nav navbar-nav pull-right">
             <?php $access = $this->session->get('accessCode');
-            if(!isset($access)){ ?>
+if (!isset($access)) { ?>
             <li class="dropdown user">
 				<a href="/users/login" class="dropdown-toggle" data-hover="dropdown" style="padding-top: 11px;" data-close-others="true">
 					
@@ -78,7 +78,7 @@
 				</a>
 				
 			</li>
-            <?php }else{ ?>
+            <?php } else { ?>
 			<!-- BEGIN NOTIFICATION DROPDOWN -->
 			<li class="dropdown" id="header_notification_bar">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -235,7 +235,7 @@
 				<a href="Kitchen_user.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 					<img alt="" src="/assets/img/avatar1_small.jpg">
 								<span class="username hidden-1024">
-									 <?php echo $this->session->get("name");?>
+									 <?php echo $this->session->get("name"); ?>
 								</span>
 					<i class="fa fa-angle-down"></i>
 				</a>
@@ -292,161 +292,179 @@
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
 <?php $access = $this->session->get('accessCode');
-        if(isset($access)){ ?>
-	<!-- BEGIN SIDEBAR -->
-	<div class="page-sidebar-wrapper">
-		<div class="page-sidebar navbar-collapse collapse">
-			<!-- BEGIN SIDEBAR MENU -->
-			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 308px;"><ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200" style="overflow: hidden; width: auto; height: 308px;">
-				<li class="sidebar-toggler-wrapper">
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-					<div class="sidebar-toggler hidden-phone">
-					</div>
-					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-				</li>
-				<li class="active ">
-					<a href="Kitchen_home.html">
-						<i class="fa fa-home"></i>
-						<span class="title">
-							Home
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="Kitchen_order.html">
-						<i class="fa fa-shopping-cart"></i>
-						<span class="title">
-							Order
-						</span>
-					</a></li>
-				<li>
-					<a href="Kitchen_pay.html">
-						<i class="fa fa-gift"></i>
-						<span class="title">
-							Payment
-						</span>
-					</a>
-				</li>
-				<li>
-					<a href="Kitchen_feedback.html">
-						<i class="fa fa-comment"></i>
-						<span class="title">
-							Feedback
-						</span>
-					</a></li>
-				<li>
-					<a href="Kitchen_user.html">
-						<i class="fa fa-user"></i>
-						<span class="title">
-							Account
-						</span>
-					</a></li>
-					<li class="last ">
-					<a href="Kitchen_management.html">
-						<i class="fa fa-users"></i>
-						<span class="title">
-							Management
-						</span>
-					</a></li>
-			</ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.3; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 308px; background: rgb(161, 178, 189);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
-			<!-- END SIDEBAR MENU -->
-		</div>
-	</div>
-	<!-- END SIDEBAR -->
-    <?php } ?>
+$role = $this->session->get('role');
+if (isset($access)) {
+    if($role=="user") require_once('/../app/menu/'.$role.'.php');
+	
+     } ?>
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content">
-			
+	   <div class="page-content">
+			<!-- BEGIN STYLE CUSTOMIZER -->
+			<div class="theme-panel hidden-xs hidden-sm">
+				<div class="toggler">
+				</div>
+				<div class="toggler-close">
+				</div>
+				<div class="theme-options">
+					<div class="theme-option theme-colors clearfix">
+						<span>
+							 THEME COLOR
+						</span>
+						<ul>
+							<li class="color-black current color-default" data-style="default">
+							</li>
+							<li class="color-blue" data-style="blue">
+							</li>
+							<li class="color-brown" data-style="brown">
+							</li>
+							<li class="color-purple" data-style="purple">
+							</li>
+							<li class="color-grey" data-style="grey">
+							</li>
+							<li class="color-white color-light" data-style="light">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- END STYLE CUSTOMIZER -->
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<!--TEXT IN TOP-->
 					<div class="col-md-8 col-md-offset-2" style="text-align:center; color: #4d90fe; font-family: cursive;border-bottom-style:inset;">
-						<h1><strong>Canteen FPT University - Hoa Lac</strong></h1>
+						<h1>Canteen FPT University - Hoa Lac</h1>
 						<br>
 					</div>
 					<!--HOT PICK TEXT-->
-					<div class="col-md-8 col-md-offset-2" style="text-align:center; color: #9cd159; font-family: cursive;padding-top:30px;margin-bottom: -30px;">
+					<div class="col-md-8 col-md-offset-2" style="text-align:center; color: #9cd159; font-family: cursive;margin-bottom: -30px;">
 						<h2><strong>Hot Pick</strong></h2>
 						<br>
 					</div>
-				<!--LEN XUONG-->
-					<div class="col-md-12" style="border-bottom-style:inset;">
-				<!--HOT PICK -->
-				<!--hot pick custom.ss-->
-									<div class="margin-top-10">
-										<div class="row mix-grid">
-											<div class="col-md-4 col-sm-4 mix hotpick mix_all" style="border-right-style: inset; display: block; opacity: 1;">
-												<div class="mix-inner">
-													<img class="img-responsive" src="/assets/img/gallery/image_combo3.jpg" alt="">
-													<div class="mix-details" style="opacity: 0.9;">
-														<h4>Gai xinh</h4>
-														<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-														<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-														<p>Em nay rat xinh dep, yeah yeah</p>
-														<br>
-														<p>Gia: 25,000 VND</p>
-														
-														<a class="mix-link" href="#form_order" data-toggle="modal">
-															<i class="fa fa-shopping-cart"></i>
-														</a>
-														<a class="mix-preview fancybox-button" href="/assets/img/works/img2.jpg" title="Project Name" data-rel="fancybox-button">
-															<i class="fa fa-search"></i>
-														</a>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-4 col-sm-4 mix hotpick mix_all" style="border-right-style: inset; display: block; opacity: 1;">
-												<div class="mix-inner">
-													<img class="img-responsive" src="/assets/img/gallery/image8.jpg" alt="">
-													<div class="mix-details" style="opacity: 0.9;">
-														<a href="#"><h4>Bun Cha</h4></a>
-														<i class="fa fa-star"></i><i class="fa fa-star"></i>
-														<i class="fa fa-star-half-o"></i>
-														<p>Mon an tuyet voi buoi trua</p>
-														<br>
-														<p>Gia: 25,000 VND</p>
-														
-														
-														<a class="mix-link" href="#form_order" data-toggle="modal">
-															<i class="fa fa-shopping-cart"></i>
-														</a>
-														<a class="mix-preview fancybox-button" href="/assets/img/works/img2.jpg" title="Project Name" data-rel="fancybox-button">
-															<i class="fa fa-search"></i>
-														</a>
-													</div>
-												</div>
-											
-											</div>
-											<div class="col-md-4 col-sm-4 mix hotpick mix_all" style="display: block; opacity: 1;">
-												<div class="mix-inner">
-													<img class="img-responsive" src="/assets/img/gallery/image9.jpg" alt="">
-													<div class="mix-details" style="opacity: 0.9;">
-														<a href="Pho Bo"><h4>Gai xinh</h4></a>
-														<i class="fa fa-star"></i><i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<p>Dac san mien Bac</p>
-														<br>
-														<p>Gia: 25,000 VND</p>
-														
-														<a class="mix-link" href="#form_order" data-toggle="modal">
-															<i class="fa fa-shopping-cart"></i>
-														</a>
-														<a class="mix-preview fancybox-button" href="/assets/img/works/img2.jpg" title="Project Name" data-rel="fancybox-button">
-															<i class="fa fa-search"></i>
-														</a>
-													</div>
-												</div>
-											
-											</div>
-										</div>
+				<!-- SLIDE IMAGE-->
+					<div class="col-md-8 col-md-offset-2" style="border-top-style: outset;">
+						<div id="myCarousel" class="carousel image-carousel slide">
+							<div class="carousel-inner">
+								<div class="item ">
+									<img src="/assets/img/gallery/image_combo3.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											Combo Thap Cam
+										</h4>
+											<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+										
 									</div>
-				<!-- END HOT PICK -->
+								</div>
+								<div class="item">
+									<img src="/assets/img/gallery/image_combo1.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											
+												Combo Hai San
+											
+											
+										</h4>
+										<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+									</div>
+								</div>
+								<div class="item active">
+									<img src="/assets/img/gallery/image_combo2.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											
+												Combo Ga
+											
+											<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+										</h4>
+									</div>
+								</div>
+								<div class="item">
+								<div class="item">
+									<img src="/assets/img/gallery/image1.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											
+												Ca Ran
+											
+											<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+										</h4>
+									</div>
+								</div>
+								</div>
+								<div class="item">
+								<div class="item">
+									<img src="/assets/img/gallery/image2.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											
+												Thit Bo Xao
+											
+											<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+										</h4>
+									</div>
+								</div>
+								</div>
+								<div class="item">
+								<div class="item">
+									<img src="/assets/img/gallery/image3.jpg" class="img-responsive" alt="" style="width:100%;height:350px;">
+
+									<div class="carousel-caption">
+										<h4>
+											
+												Salad
+												
+											<a class="mix-link" href="#form_order_combo" data-toggle="modal">
+												<img src="/assets/img/order-2.png" class="img-responsive" alt="" style="height:50px; margin-left: 350px;;">
+											</a>
+										</h4>
+										
+									</div>
+								</div>
+								</div>
+								
+							</div>
+							<!-- Carousel nav -->
+							<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+								<i class="m-icon-big-swapleft m-icon-white"></i>
+							</a>
+							<a class="carousel-control right" href="#myCarousel" data-slide="next">
+								<i class="m-icon-big-swapright m-icon-white"></i>
+							</a>
+							<ol class="carousel-indicators">
+								<li data-target="#myCarousel" data-slide-to="0" class="">
+								</li>
+								<li data-target="#myCarousel" data-slide-to="1" class="">
+								</li>
+								<li data-target="#myCarousel" data-slide-to="2" class="active">
+								</li>
+								<li data-target="#myCarousel" data-slide-to="3" class="">
+								</li>
+								<li data-target="#myCarousel" data-slide-to="4" class="">
+								</li>
+								<li data-target="#myCarousel" data-slide-to="5" class="">
+								</li>
+							</ol>
+						</div>
 					</div>
 				
 					<div class="row">
 				<!--BODY TEXT-->
-					<div class="col-md-8 col-md-offset-2" style="text-align:center; color: #9cd159; font-family: cursive;margin-top: 40px;margin-bottom: -40px;border-top-style:outset;">
+					<div class="col-md-8 col-md-offset-2" style="text-align:center; color: #9cd159; font-family: cursive;margin-bottom: -40px;border-top-style:outset;">
 						<h2><strong>Hot Food Today</strong></h2>
 						<br>
 					</div>
@@ -1165,6 +1183,7 @@
 				<!-- END PAGE CONTENT-->
 			</div>
 		</div>
+	</div>
 	<!-- END CONTENT -->
 	</div>
 <!-- END CONTAINER -->

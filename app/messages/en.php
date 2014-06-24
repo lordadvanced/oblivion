@@ -8,6 +8,12 @@ $messages = array(
     "remember_me"    => "Remember me",
 	"sign_in_title"  => "Please sign in",
     "missing_username" => "Enter any username and password",
+    "home"=>"Home",
+    "order"=>"Order",
+    "payment"=>"Payment",
+    "feedback"=>"Feedback",
+    "account"=>"Account",
+    "management"=>"Management",
     
     
 );

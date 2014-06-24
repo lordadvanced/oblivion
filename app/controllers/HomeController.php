@@ -8,6 +8,8 @@ class HomeController extends ControllerBase
         Phalcon\Tag::setTitle('Welcome');
         parent::initialize();
         $this->view->setVar("t", $this->_getTranslation());
+        $menu  = htmlentities($this->_getMenu());
+        $this->view->setVar("menu", $menu);
     }
 
     public function indexAction()
