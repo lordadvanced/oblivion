@@ -1,6 +1,6 @@
 <?php
 //require_once ('/../app/plugins/LightOpenID/openid.php');
-class FeedbackController extends ControllerBase
+class PaymentController extends ControllerBase
 {
     public function initialize()
     {

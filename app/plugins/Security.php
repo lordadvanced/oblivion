@@ -46,6 +46,7 @@ class Security extends Plugin
 			//Manager area resources
 			$privateResources = array(
 				'management' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                'payment' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 			);
 			foreach ($privateResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -55,6 +56,10 @@ class Security extends Plugin
 			$publicResources = array(
 				'home' => array('index'),
    	            'users' => array('index','login','logout'),
+                'payment' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                'feedback' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                'account' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                'management' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);

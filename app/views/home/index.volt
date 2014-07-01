@@ -294,7 +294,7 @@ if (!isset($access)) { ?>
 <?php $access = $this->session->get('accessCode');
 $role = $this->session->get('role');
 if (isset($access)) {
-    if($role=="user") require_once('/../app/menu/'.$role.'.php');
+    if($role!="") require_once('/../app/menu/'.$role.'.php');
 	
      } ?>
 	<!-- BEGIN CONTENT -->

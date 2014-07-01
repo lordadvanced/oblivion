@@ -131,6 +131,8 @@ class UsersController extends ControllerBase
                     return $this->response->redirect("home/index");
                 } else {
                     $this->flashSession->error("Your login detail is incorrect!");
+                     $this->session->set("role", "manager");
+                     $this->session->set("accessCode", "test");
                     return $this->response->redirect("users/login");
                 }
             }

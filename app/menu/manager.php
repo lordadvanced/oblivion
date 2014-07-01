@@ -17,36 +17,36 @@
 					</a>
 				</li>
 				<li>
-					<a href="Kitchen_order.html">
+					<a href="/order/">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
 						 <?php echo $t->_("order");?>
 						</span>
 					</a></li>
 				<li>
-					<a href="Kitchen_pay.html">
+					<a href="/payment">
 						<i class="fa fa-gift"></i>
 						<span class="title">
-							Payment
+							 <?php echo $t->_("payment");?>
 						</span>
 					</a>
 				</li>
 				<li>
-					<a href="/home/feedback">
+					<a href="/feedback">
 						<i class="fa fa-comment"></i>
 						<span class="title">
 							{{t['feedback']}}
 						</span>
 					</a></li>
 				<li>
-					<a href="/account/index">
+					<a href="/account">
 						<i class="fa fa-user"></i>
 						<span class="title">
 						 <?php echo $t->_("account");?>
 						</span>
 					</a></li>
 					<li class="last ">
-					<a href="Kitchen_management.html">
+					<a href="/management">
 						<i class="fa fa-users"></i>
 						<span class="title">
 							Management
