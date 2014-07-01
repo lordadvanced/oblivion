@@ -133,6 +133,7 @@ class UsersController extends ControllerBase
                     $this->flashSession->error("Your login detail is incorrect!");
                      $this->session->set("role", "manager");
                      $this->session->set("accessCode", "test");
+                      $this->session->set("name", "Nguyen DUc Tien");
                     return $this->response->redirect("users/login");
                 }
             }
