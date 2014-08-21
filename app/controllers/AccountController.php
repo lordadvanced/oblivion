@@ -1,6 +1,6 @@
 <?php
 //require_once ('/../app/plugins/LightOpenID/openid.php');
-class AccountController extends ControllerBase
+class AccountController extends BaseController
 {
     public function initialize()
     {
@@ -8,50 +8,48 @@ class AccountController extends ControllerBase
         Phalcon\Tag::setTitle('Welcome');
         parent::initialize();
         $this->view->setVar("t", $this->_getTranslation());
-        $menu  = htmlentities($this->_getMenu());
-        $this->view->setVar("menu", $menu);
     }
 
     public function indexAction()
     {
         $session_username = $this->session->get("accessCode");
-//                if(!isset($session_username)){
-//                    $this->response->redirect("users/login");
-//                }
-        
-        //if (!$this->request->isPost()) {
-        //            $this->flash->notice('This is a sample application of the Phalcon PHP Framework.
-        //                Please don\'t provide us any personal information. Thanks');
-        //        }
+        $user_profile = $this->session->get("user_profile");
+        $this->view->setVar("user_profile", $user_profile);    
     }
-    public function loginAction()
-    {
-
-
+    public function updateuserAction(){
+         $config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
+         $url = $config->utdgame->user_profile;
+         $user_profile = $this->session->get("user_profile");
+          $header = $this->session->get("accessCode"); 
+         $path=$user_profile['avatar'];
+         if ($this->request->hasFiles() == true) {
+            $isUploaded = false;
+            //for a loop handle each file individually
+            foreach ($this->request->getUploadedFiles() as $upload) {
+                $path = '/assets/img/users_avatar/' . md5(uniqid(rand(), true)) . '-' . strtolower($upload->
+                    getName());
+                ($upload->moveTo($config->application->basePath."/public".$path)) ? $isUploaded = true : $isUploaded = false;
+            }
+         }
+         
+          $data = array(
+                "name"=>$this->request->getPost("full_name"),
+                "dob"=>$this->request->getPost("dob"),
+                "gender"=>$this->request->getPost("gender"),
+                "avatar"=>$path
+          );
+          $return = $this->get_server_request($data, $url, $header, 'put');
+          $data_update = $this->objectToArray(json_decode($return));
+          if($data_update['user_id']){
+                 echo json_encode(array("message" => 1));
+                 die;
+          }else{
+                 echo json_encode(array("message" => 2));
+                 die;
+          }
+          
     }
-    public function logoutAction()
-    {
-        $this->session->destroy();
-        $this->response->redirect("/home/index", true)->send();
-    }
-    public function accessAction()
-    {
-        if (isset($session_username)) {
-            $this->response->redirect('index/index');
-        }
-        try {
-            $config = new Phalcon\Config\Adapter\Ini(__dir__ . '/../config/config.ini');
-            $client_id = $config->Oauth->clientId;
-            $redirect_url = $config->Oauth->redirectUri;
-            $state = md5(rand());
-            $hd = $config->Oauth->hd;
-            $url = "https://accounts.google.com/o/oauth2/auth?client_id=$client_id&redirect_uri=$redirect_url&response_type=code&scope=openid%20email&state=$state&hd=$hd";
-            $this->response->redirect($url, true)->send();
-
-        }
-        catch (ErrorException $e) {
-            $message = $e->getMessage();
-            $view->error_messages = $message;
-        }
-    }
+   
+    
+   
 }

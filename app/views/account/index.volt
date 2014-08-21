@@ -1,338 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-<head>
-<meta charset="utf-8"/>
-<title>Home Page</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="" name="description"/>
-<meta content="" name="author"/>
-
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
-<!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="/assets/css/pages/portfolio.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
-<!-- END PAGE LEVEL STYLES -->
-<!-- BEGIN THEME STYLES -->
-<link href="/assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/plugins.css" rel="stylesheet" type="text/css"/>
-<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
-<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
-<!-- END THEME STYLES -->
-<link rel="shortcut icon" href="favicon.ico"/>
-</head>
-<!-- END HEAD -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <!-- BEGIN BODY -->
-<body class="page-header-fixed page-sidebar-fixed page-sidebar-closed">
-<!-- BEGIN HEADER -->
-<div class="header navbar navbar-fixed-top">
-	<!-- BEGIN TOP NAVIGATION BAR -->
-	<div class="header-inner">
-		<!-- BEGIN LOGO -->
-		<a class="navbar-brand" href="Kitchen_home.html">
-			<img src="/assets/img/logo.png" alt="logo" class="img-responsive" style="height:40px; width:150px; margin-top:-15px;">
-		</a>
-		<!-- END LOGO -->
-		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-		<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			<img src="/assets/img/menu-toggler.png" alt="">
-		</a>
-		<!-- END RESPONSIVE MENU TOGGLER -->
-		<!-- BEGIN HORIZANTAL MENU -->
-		<div class="hor-menu hidden-sm hidden-xs">
-			<ul class="nav navbar-nav">
-			
-			</ul>
-		</div>
-		<!-- END HORIZANTAL MENU -->
-				<!-- BEGIN TOP NAVIGATION MENU LEFT-->
-			<ul class="nav navbar-nav pull-left">
-				<!-- BEGIN HEADER SEARCH BOX -->
-				<form class="search-form" role="form" action="#">
-					<input type="text" class="form-control input-medium input-sm" name="query" placeholder="Search...">
-					<input type="button" class="submit" value=" ">
-				</form>
-				<!-- END HEADER SEARCH BOX -->
-			
-			</ul>
-		<!-- END TOP NAVIGATION MENU -->
-		<!-- BEGIN TOP NAVIGATION MENU RIGHT -->
-		
 
-			<ul class="nav navbar-nav pull-right">
-            <?php $access = $this->session->get('accessCode');
-if (!isset($access)) { ?>
-            <li class="dropdown user">
-				<a href="/users/login" class="dropdown-toggle" data-hover="dropdown" style="padding-top: 11px;" data-close-others="true">
-					
-								<span class="username hidden-1024">
-									 Login
-								</span>
-					
-				</a>
-				
-			</li>
-            <?php } else { ?>
-			<!-- BEGIN NOTIFICATION DROPDOWN -->
-			<li class="dropdown" id="header_notification_bar">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="fa fa-warning"></i>
-								<span class="badge green">
-									 6
-								</span>
-				</a>
-				<ul class="dropdown-menu extended notification">
-					<li>
-						<p>
-							You have 6 new notifications
-						</p>
-					</li>
-					<li style="position: relative; overflow: hidden; width: auto; height: 170px;">
-						<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 170px;"><ul class="dropdown-menu-list scroller" style="height: 170px; overflow: hidden; width: auto;">
-							<li>
-								<a href="#">
-												<span class="label label-sm label-icon label-success">
-													<i class="fa fa-plus"></i>
-												</span>
-													Order successfull.
-												<span class="time">
-													 Just now
-												</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-												<span class="label label-sm label-icon label-danger">
-													<i class="fa fa-bolt"></i>
-												</span>
-													Order Fail.
-												<span class="time">
-													 15 mins
-												</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-												<span class="label label-sm label-icon label-warning">
-													<i class="fa fa-bell-o"></i>
-												</span>
-									2 Hours to Lunch.
-												<span class="time">
-													 22 mins
-												</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-												<span class="label label-sm label-icon label-info">
-													<i class="fa fa-bullhorn"></i>
-												</span>
-									You not have order today.
-												<span class="time">
-													 40 mins
-												</span>
-								</a>
-							</li>
-							
-						</ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; background: rgb(187, 187, 187);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(234, 234, 234);"></div></div>
-					</li>
-					<li class="external">
-						<a href="Kitchen_inbox.html">
-							See all notifications <i class="m-icon-swapright"></i>
-						</a>
-					</li>
-				</ul>
-			</li>
-			<!-- END NOTIFICATION DROPDOWN -->
-			<!-- BEGIN INBOX DROPDOWN -->
-			<li class="dropdown" id="header_inbox_bar">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<i class="fa fa-envelope"></i>
-								<span class="badge orange">
-									 5
-								</span>
-				</a>
-				<ul class="dropdown-menu extended inbox">
-					<li>
-						<p>
-							You have 5 new messages
-						</p>
-					</li>
-					<li style="position: relative; overflow: hidden; width: auto; height: 170px;">
-						<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 170px;"><ul class="dropdown-menu-list scroller" style="height: 170px; overflow: hidden; width: auto;">
-							<li>
-								<a href="inbox14c8.html?a=view">
-												<span class="photo">
-													<img src="/assets/img/avatar.jpg" alt="">
-												</span>
-												<span class="subject">
-													<span class="from">
-														 Admin
-													</span>
-													<span class="time">
-														 Just now
-													</span>
-												</span>
-												<span class="message">
-													 Hello, nice to meet you
-												</span>
-								</a>
-							</li>
-							<li>
-								<a href="Kitchen_inbox.html">
-												<span class="photo">
-													<img src="/assets/img/avatar.jpg" alt="">
-												</span>
-												<span class="subject">
-													<span class="from">
-														 Admin
-													</span>
-													<span class="time">
-														 Yesterday
-													</span>
-												</span>
-												<span class="message">
-													 Hello, nice to meet you
-												</span>
-								</a>
-							</li>
-							<li>
-								<a href="inbox14c8.html?a=view">
-												<span class="photo">
-													<img src="/assets/img/avatar.jpg" alt="">
-												</span>
-												<span class="subject">
-													<span class="from">
-														 Admin
-													</span>
-													<span class="time">
-														 5 days ago
-													</span>
-												</span>
-												<span class="message">
-													 Hello, nice to meet you
-												</span>
-								</a>
-							</li>
-						</ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; background: rgb(187, 187, 187);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(234, 234, 234);"></div></div>
-					</li>
-					<li class="external">
-						<a href="inbox.html">
-							See all messages <i class="m-icon-swapright"></i>
-						</a>
-					</li>
-				</ul>
-			</li>
-			<!-- END INBOX DROPDOWN -->
-			<!-- BEGIN USER LOGIN DROPDOWN -->
-			<li class="dropdown user">
-				<a href="Kitchen_user.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="/assets/img/avatar1_small.jpg">
-								<span class="username hidden-1024">
-									 <?php echo $this->session->get("name"); ?>
-								</span>
-					<i class="fa fa-angle-down"></i>
-				</a>
-				<ul class="dropdown-menu">
-					<li>
-						<a href="/users/logout">
-							<i class="fa fa-key"></i> Log Out
-						</a>
-					</li>
-				</ul>
-			<!-- END USER LOGIN DROPDOWN -->
-			</li>
-            <?php } ?>
-            <!-- BEGIN LANGUAGE -->
-			<li class="dropdown language">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="/assets/img/flags/us.png">
-					<span class="username">
-						 US
-					</span>
-					
-				</a>
-				<ul class="dropdown-menu">
-					<li>
-						<a href="#">
-							<img alt="" src="/assets/img/flags/es.png"> Spanish
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img alt="" src="/assets/img/flags/de.png"> German
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img alt="" src="/assets/img/flags/ru.png"> Russian
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img alt="" src="/assets/img/flags/fr.png"> French
-						</a>
-					</li>
-				</ul>
-			</li>
-			
-			</ul>
-		<!-- END TOP NAVIGATION MENU -->
-	</div>
-</div>
-<!-- END HEADER -->
-<div class="clearfix">
-</div>
-<!-- BEGIN CONTAINER -->
-<div class="page-container">
-<?php $access = $this->session->get('accessCode');
-$role = $this->session->get('role');
-if (isset($access)) {
-    if($role!="") require_once('/../app/menu/'.$role.'.php');
-	
-     } ?>
-	<!-- BEGIN CONTENT -->
-	<div class="page-content-wrapper">
-	   <div class="page-content" style="min-height:609px !important">
-			<!-- BEGIN STYLE CUSTOMIZER -->
-			<div class="theme-panel hidden-xs hidden-sm">
-				<div class="toggler">
-				</div>
-				<div class="toggler-close">
-				</div>
-				<div class="theme-options">
-					<div class="theme-option theme-colors clearfix">
-						<span>
-							 THEME COLOR
-						</span>
-						<ul>
-							<li class="color-black current color-default" data-style="default">
-							</li>
-							<li class="color-blue" data-style="blue">
-							</li>
-							<li class="color-brown" data-style="brown">
-							</li>
-							<li class="color-purple" data-style="purple">
-							</li>
-							<li class="color-grey" data-style="grey">
-							</li>
-							<li class="color-white color-light" data-style="light">
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- END STYLE CUSTOMIZER -->
+<body class="page-header-fixed page-sidebar-fixed">
+    <?php $access=$this->session->get('accessCode'); if (isset($access)) require_once('../app/menu/header_logged_in.php'); else require_once('../app/menu/header_nologin.php'); ?>
+    <link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap-datepicker/css/datepicker.css"/>
+    <div class="clearfix">
+    </div>
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <?php $access=$this->session->get('accessCode'); $role = $this->session->get('role'); if (isset($access)) { if($role!="") require_once('../app/menu/'.$role.'.php'); } ?>
+        <?php $user_profile = $this->session->get('user_profile');?>
+        <!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+		<div class="page-content" style="min-height:583px !important">
+		
 			<!-- BEGIN PAGE CONTENT-->
-						<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
-				<div class="row profile">
+				
 	<div class="col-md-12">
 	<!--BEGIN TABS-->
 	<div class="tabbable tabbable-custom tabbable-full-width">
@@ -347,69 +33,91 @@ if (isset($access)) {
 				Account
 			</a>
 		</li>
+		<li class="">
+			<a href="#tab_3_3" data-toggle="tab">
+				Order
+			</a>
+		</li>
 	</ul>
 	<div class="tab-content">
 	<!--tab_1_1-->
 	<div class="tab-pane active" id="tab_1_1">
 		<div class="row">
-			<div class="col-md-3">
-				<img src="/assets/img/avatar.jpg" class="img-responsive" alt="" style="margin-left:5px;">
+			<div class="col-md-3" style="margin-left:10px;">
+				<img style="width: 250px;" src="<?php echo $user_profile['avatar'];?>" class="img-responsive border-content-big" alt="">
 				<a href="#" class="profile-edit" style="margin-left:5px;"></a>
-			</div>
-			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-8 profile-info">
-						<h1>Thanh Yey Cai Dep</h1>
-						<a href="#">
-							www.KitchenLDT4.com
-						</a>
+                	<h1><?php echo $user_profile['name'];?></h1>
 						<p></p>
 						<ul class="list-inline">
 							<li>
-								<i class="fa fa-map-marker"></i> Ha Noi
+								<i class="fa fa-calendar"></i> <?php echo $user_profile['date_of_birth'];?>
 							</li>
 							<li>
-								<i class="fa fa-calendar"></i> 28 September 1991
-							</li>
-							<li>
-								<i class="fa fa-briefcase"></i> Designer
-							</li>
-							<li>
-								<i class="fa fa-star"></i> 0915467899
+								<i class="fa fa-star"></i><?php if(isset($user_profile['phone'])) echo $user_profile['phone'];?>
 							</li>
 						</ul>
-						<label for="exampleInputEmail1">Name</label>
-						<input type="text" class="form-control" value="Dao Ngoc Thanh" disabled="">
-						<label>Email Address</label>
+			</div>
+			<div class="col-md-8">
+				<div class="row ">
+					<div class="col-md-7 profile-info border-content-big" style="padding-bottom: 35px;border-right: 2.5px solid #adadad;border-left: 2.5px solid #adadad;">
+					
+						
+						<label ><?php echo $t->_("name");?></label>
+						<div class="input-group">
+												<span class="input-group-addon">
+													<i class="fa fa-user"></i>
+												</span>
+								<label  class="form-control input-large" ><?php echo $user_profile['name'];?></label>
+						</div>
+						
+						<label><?php echo $t->_("email_address");?></label>
 
 						<div class="input-group">
 												<span class="input-group-addon">
 													<i class="fa fa-envelope"></i>
 												</span>
-							<input type="text" class="form-control" value="daothanh.dnt@gmail.com" disabled="">
+							<label class="form-control input-large"><?php echo $user_profile['email'];?></label>
 						</div>
-						<label for="exampleInputPassword1">Password</label>
+                       <label><?php echo $t->_("gender");?></label>
 
 						<div class="input-group">
 												<span class="input-group-addon">
-													<i class="fa fa-user"></i>
+													<i class="fa fa-male"></i>
 												</span>
-							<input type="password" class="form-control" id="exampleInputPassword1" value="**************" disabled="">
+							<label class="form-control input-large"><?php if(isset($user_profile['gender']))  echo $user_profile['gender'];?></label>
 						</div>
-						<label>Address</label>
+                        <label><?php echo $t->_("religion");?></label>
 
 						<div class="input-group">
 												<span class="input-group-addon">
-													<i class="fa fa-bell"></i>
+													<i class="fa fa-plus"></i>
 												</span>
-							<input type="text" class="form-control" value="Ho Tay, Ha Noi" disabled="">
+							<label class="form-control input-large"><?php if(isset($user_profile['religion'])) echo $user_profile['religion'];?></label>
+						</div>
+                        <label><?php echo $t->_("nationality");?></label>
+
+						<div class="input-group">
+												<span class="input-group-addon">
+													<i class="fa fa-location-arrow"></i>
+												</span>
+							<label class="form-control input-large"><?php if(isset($user_profile['nationality'])) echo $user_profile['nationality'];?></label>
 						</div>
 					</div>
 					<!--end col-md-8-->
-					<div class="col-md-4">
-						<div class="portlet sale-summary">
+					<div class="col-md-5 profile-info" style="">
+						<div class="portlet sale-summary" style="padding-top:15px;">
 							<div class="portlet-title">
-								<div class="caption">
+							
+										<strong style="font-size:24px;">
+																	<span class="sale-info">
+																		 <?php echo $t->_("balance");?>: 
+																	</span> 
+																	<span class="sale-num" style="font-size:20px;">
+																		<?php echo $user_profile["balance"];?> VND
+																	</span>
+										</strong>
+							<br><br><br>
+								<div class="caption" style="font-size:22px;">
 									Amount
 								</div>
 								<div class="tools">
@@ -420,12 +128,12 @@ if (isset($access)) {
 							<div class="portlet-body">
 								<ul class="list-unstyled">
 									<li>
-																	<span class="sale-info">
-																		 To day spent: <i class="fa fa-img-up"></i>
-																	</span>
-																	<span class="sale-num">
-																		 45,000 VND
-																	</span>
+										<span class="sale-info">
+										 To day spent: <i class="fa fa-img-up"></i>
+										</span>
+										<span class="sale-num">
+										45,000 VND
+										</span>
 									</li>
 									<li>
 																	<span class="sale-info">
@@ -436,16 +144,7 @@ if (isset($access)) {
 																	</span>
 									</li>
 									<br><br>
-									<li>
-										<strong>
-																	<span class="sale-info">
-																		 Balance: 
-																	</span>
-																	<span class="sale-num">
-																		 350,000 VND
-																	</span>
-										</strong>
-									</li>
+									
 								</ul>
 							</div>
 						</div>
@@ -461,21 +160,21 @@ if (isset($access)) {
 		<div class="row profile-account">
 			<div class="col-md-3">
 				<ul class="ver-inline-menu tabbable margin-bottom-10">
-					<li class="">
+					<li class="active">
 						<a data-toggle="tab" href="#tab_1-1">
-							<i class="fa fa-cog"></i> Change Profile
+							<i class="fa fa-cog"></i> <?php echo $t->_("change_profile");?>
 						</a>
 													<span class="after">
 													</span>
 					</li>
-					<li class="active">
+					<li>
 						<a data-toggle="tab" href="#tab_2-2">
-							<i class="fa fa-picture-o"></i> Account History
+							<i class="fa fa-picture-o"></i> <?php echo $t->_("account_history");?>
 						</a>
 					</li>
-					<li class="">
+					<li>
 						<a data-toggle="tab" href="#tab_3-3">
-							<i class="fa fa-lock"></i> Account Settings
+							<i class="fa fa-lock"></i><?php echo $t->_("account_setting");?>
 						</a>
 					</li>
 				</ul>
@@ -483,91 +182,114 @@ if (isset($access)) {
 			<div class="col-md-9">
 				<div class="tab-content">
 					<!--CHANGE PROFILE-->
-					<div id="tab_1-1" class="tab-pane">
+					<div id="tab_1-1" class="tab-pane active">
 						<!--PORTLET CHANGE PROFILE-->
 						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="fa fa-reorder"></i>Change Profile
-								</div>
-								<div class="tools">
-									<a href="#" class="collapse">
-									</a>
-								</div>
-							</div>
-							<div class="portlet-body form">
-								<!-- BEGIN FORM-->
-								<div class="col-md-10 col-md-offset-1">
-								<form action="#" class="form-horizontal form-bordered">
-									<div class="form-body">
-									<!--CONTENT-->
-												<div class="form-group">
-													<label class="control-label">First Name</label>
-													<input type="text" placeholder="Thanh" class="form-control">
-												</div>
-												<div class="form-group">
-													<label class="control-label">Last Name</label>
-													<input type="text" placeholder="Dao" class="form-control">
-												</div>
-												<div class="form-group">
-													<label class="control-label">Mobile Number</label>
-													<input type="text" placeholder="0915467899" class="form-control">
-												</div>
-												<div class="form-group">
-													<label class="control-label">About</label>
-													<textarea class="form-control" rows="3" placeholder="Kit Chen mana ger !!..."></textarea>
-												</div>
-												<div class="form-group">
-													<label class="control-label">Website</label>
-													<input type="text" placeholder="http://www.mywebsite.com" class="form-control">
-												</div>						
-												<p>
-												Upload image from your computer to change Avatar
-												</p>
-												<div class="form-group">
-													<div class="fileinput fileinput-new" data-provides="fileinput">
-														<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-															<img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
-														</div>
-														<div>
-																						<span class="btn default btn-file">
-									
-																							<input type="file" name="...">
-																						</span>
-															<a href="#" class="btn default fileinput-exists" data-dismiss="fileinput">
-																Remove
-															</a>
-														</div>
-													</div>
-													<div class="clearfix margin-top-10">
-																					<span class="label label-danger">
-																						 NOTE! 
-																					</span>  
-																					<span>
-																						Image size can not more than 3mb.
-																					</span>
-													</div>
-												</div>												
-									</div>
-									<div class="form-actions fluid">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="col-md-offset-3 col-md-9">
-													<a href="#" class="btn green">
-														Save
-													</a>
-													<a href="#" class="btn default">
-														Cancel
-													</a>
-												</div>
-											</div>
+                                                        <div class="portlet-title">
+                                                            <div class="caption">
+                                                                <i class="fa fa-reorder"></i>
+                                                              <?php echo $t->_("change_user_form");?>                                                           </div>
+                                                            <div class="tools">
+                                                                <a href="#" class="collapse">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="portlet-body form">
+                                                            <!-- BEGIN USER PROFILE FORM-->
+                                                            
+                                                            <form action="/account/updateuser" name="change_userprofile_form" id="change_userprofile_form" method="POST" class="form-horizontal form-bordered" enctype="multipart/form-data">
+                                                              <div class="form-group">
+                                                                        <label style="width: 100%;text-align: center;" class="control-label col-md-3" name="return_edituser_mess" id="return_edituser_mess"></label>
+                                                                </div>
+                                                                <div class="form-body">
+                                                                
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                        <?php echo $t->_("full_name");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <input id="full_name" name="full_name" type="text" class="form-control" placeholder="<?php echo $t->_("enter_full_name");?>">
+                                                                            <div id="full_name_error" name="full_name_error" class="error full_name_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("fname_null");?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+										<label class="col-md-3 control-label"><?php echo $t->_("gender");?></label>
+										<div class="col-md-2">
+											<select class="form-control" name="gender" id="gender">
+												<option value="<?php echo $t->_("male");?>"><?php echo $t->_("male");?></option>
+												<option value="<?php echo $t->_("female");?>"><?php echo $t->_("female");?></option>
+												<option <?php echo $t->_("other");?>><?php echo $t->_("other");?></option>
+											</select>
 										</div>
 									</div>
-								</form>
-								<!-- END FORM-->
-								</div>
-							</div>	
-						</div>
+                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                        <?php echo $t->_("dob");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <input id="dob" name="dob" type="text" class="form-control" placeholder="<?php echo $t->_("dob_ex");?>">
+                                                                            <div id="dob_error" name="dob_error" class="error dob_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("dob_null");?></div>
+                                                                               <div id="dobtype_error" name="dobtype_error" class="error dobtype_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("dobtype_error");?></div>
+                                                                        </div>
+                                                                    </div>
+                                    
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                        <?php echo $t->_("mobile_number");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="<?php echo $t->_("enter_mobile");?>">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                            <?php echo $t->_("description");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <textarea id="user_desc" name="user_desc" class="form-control" rows="3" placeholder="<?php echo $t->_('enter_description');?> "></textarea>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3"><?php echo $t->_("upload_img");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                            <img src="<?php echo $user_profile['avatar'];?>" style="width:150px" />
+                                                                                <div>
+                                                                                    <span class="btn default btn-file">
+														<span class="fileinput-new">
+															 Select image
+														</span>
+                                                                                    <span class="fileinput-exists">
+															 Change
+														</span>
+                                                                                    <input type="file" name="files[]" multiple="">
+                                                                                    </span>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="clearfix margin-top-10">
+                                                                                <span class="label label-danger">
+													 NOTE!
+												</span>
+                                                                                Image size no more than 3Mb.</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-actions fluid">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="col-md-offset-3 col-md-9">
+                                                                                <button type="submit" name="user_profile_submit" id="user_profile_submit" value="Send File(s)" class="btn blue"><i class="fa fa-check"></i> Submit</button>
+                                                                                <button type="button" class="btn default">Cancel</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                            <!-- END FORM-->
+                                                        </div>
+                                                    </div>
 						<!--PORTLET CHANGE PASSWORD-->
 						<div class="portlet box blue">
 							<div class="portlet-title">
@@ -620,108 +342,7 @@ if (isset($access)) {
 						</div>
 					</div>
 					<!--USER HISTORY-->
-					<div id="tab_2-2" class="tab-pane active">
-						<!--ORDER HISTORY-->
-						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="fa fa-reorder"></i>Order History
-								</div>
-								<div class="tools">
-									<a href="#" class="collapse">
-									</a>
-								</div>
-							</div>
-							<!-- BEGIN FORM-->
-							<div class="portlet-body form">
-								
-								<div class="col-md-10 col-md-offset-1">
-									<table class="table table-bordered table-striped">
-									<tbody><tr>
-										<th><span>Date</span></th>
-										<th><span>Name of Food</span></th>		
-										<th><span>Price (VND)</span></th>
-										<th><span>Total (VND)</span></th>
-									  </tr>
-									<tr>
-										  <td>6/6/2014</td>
-										  <td>
-											Bo Xao Toi<br>Ca Ran<br>Rau Luoc
-										  </td>		
-										  <td>
-											25,000<br>25,000<br>15,000
-										  </td>
-										  <td>65,000</td>
-										</tr>
-										<tr>
-										  <td>5/6/2014</td>
-										  <td>
-											Salad<br>Rau Luoc
-										  </td>		
-										  <td>
-											20,000<br>15,000
-										  </td>
-										  <td>35,000</td>
-										</tr>
-										<tr>
-										  <td>4/6/2014</td>
-										  <td>
-											Bun Bo<br>Salad<br>Rau Luoc
-										  </td>		
-										  <td>
-											25,000<br>20,000<br>15,000
-										  </td>
-										  <td>60,000</td>
-										</tr>
-								</tbody></table>
-
-									<!--
-									<table id="keywords" cellspacing="0" cellpadding="0">
-									<thead>
-									  <tr>
-										<th><span>Date</span></th>
-										<th><span>Name of Food</span></th>		
-										<th><span>Price (VND)</span></th>
-										<th><span>Total (VND)</span></th>
-									  </tr>
-									</thead>
-									<tbody>
-									  <tr>
-										  <td>6/6/2014</td>
-										  <td>
-											Bo Xao Toi<br>Ca Ran<br>Rau Luoc
-										  </td>		
-										  <td>
-											25,000<br>25,000<br>15,000
-										  </td>
-										  <td>65,000</td>
-										</tr>
-										<tr>
-										  <td>5/6/2014</td>
-										  <td>
-											Salad<br>Rau Luoc
-										  </td>		
-										  <td>
-											20,000<br>15,000
-										  </td>
-										  <td>35,000</td>
-										</tr>
-										<tr>
-										  <td>4/6/2014</td>
-										  <td>
-											Bun Bo<br>Salad<br>Rau Luoc
-										  </td>		
-										  <td>
-											25,000<br>20,000<br>15,000
-										  </td>
-										  <td>60,000</td>
-										</tr>
-									</tbody>
-								  </table>
-								  -->
-								</div>
-							</div>	
-						</div>
+					<div id="tab_2-2" class="tab-pane">
 						<!--CANCEL HISTORY-->
 						<div class="portlet box blue">
 							<div class="portlet-title">
@@ -827,12 +448,7 @@ if (isset($access)) {
 										Recevie email from admin.
 									</td>
 									<td>
-										<label class="uniform-inline">
-											<input type="radio" name="optionsRadios1" value="option1" checked="">
-											Yes </label>
-										<label class="uniform-inline">
-											<input type="radio" name="optionsRadios1" value="option2">
-											No </label>
+										<input type="checkbox" value=""> Yes 
 									</td>
 								</tr>
 								<tr>
@@ -846,7 +462,7 @@ if (isset($access)) {
 								</tr>
 								<tr>
 									<td>
-										Hide when i choose food.
+										Hide when i choose food
 									</td>
 									<td>
 										
@@ -855,7 +471,7 @@ if (isset($access)) {
 								</tr>
 								<tr>
 									<td>
-										Hide when i choose food.
+										Language
 									</td>
 									<td>
 										<label class="uniform-inline">
@@ -884,61 +500,44 @@ if (isset($access)) {
 			<!--end col-md-9-->
 		</div>
 	</div>
+	<div class="tab-pane" id="tab_3_3">
+				<!--CALENDAR ORDER-->
+									<table class="hisCalendar" align="center">
+										<tbody><tr class="monthname topcalendar"><td colspan="7"><h1><strong>July 2014</strong></h1></td></tr>
+										<tr class="dayname"><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>
+										<tr class="daycalendar"><td class="noneday">29</td><td class="noneday">30</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+										<tr class="daycalendar"><td td="" class="blue-cell">6</td><td td="" class="blue-cell">7</td><td>8</td><td class="blue-cell">9</td><td>10</td><td>11</td><td>12</td></tr>
+										<tr class="daycalendar"><td td="" class="blue-cell">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+										<tr class="daycalendar"><td>20</td><td>21</td><td>22</td><td class="blue-cell">23</td><td>24</td><td>25</td><td>26</td></tr>
+										<tr class="daycalendar"><td>28</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="noneday">1</td><td class="noneday">2</td></tr>										
+									<tr class="botcalendar"><td colspan="7"><h3><strong>Order History</strong></h3></td></tr>
+									</tbody></table>
+								</div>
+	</div>
 	<!--end tab-pane-->
 	</div>
 	</div>
 	<!--END TABS-->
 				</div>
-				</div>
+				
 			</div>
 		</div>
-	</div>
 	<!-- END CONTENT -->
 	</div>
 <!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="footer">
-    <div class="footer-inner">
-        Ye' Ye'
-    </div>
-    <div class="footer-tools">
-		<span class="go-top">
-			<i class="fa fa-angle-up"></i>
-		</span>
-    </div>
-</div>
-<!-- END FOOTER -->
-<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-<!-- BEGIN CORE PLUGINS -->
-<!--[if lt IE 9]>
-<script src="/assets/plugins/respond.min.js"></script>
-<script src="/assets/plugins/excanvas.min.js"></script> 
-<![endif]-->
-<script type="text/javascript" async="" src="http://stats.g.doubleclick.net/dc.js"></script><script src="/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
-<script src="/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-
-<!-- END CORE PLUGINS -->
-<!-- BEGIN PAGE LEVEL PLUGINS -->
-<!--PLUGIN LEN XUONG-->
-<script type="text/javascript" src="/assets/plugins/jquery-mixitup/jquery.mixitup.min.js"></script>
-<script type="text/javascript" src="/assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
-<!-- END PAGE LEVEL PLUGINS -->
-<script src="/assets/scripts/core/app.js"></script>
-<!--PLUGIN LEN XUONG-->
-<script src="/assets/scripts/custom/portfolio.js"></script>
+<?php require_once( '../app/menu/footer.php');?>
 <script>
-jQuery(document).ready(function() {    
-   App.init();
-   //LEN XUONG
-   Portfolio.init();
-});
+			$( function() {
+			  $('.daycalendar td').click( function() {
+				$(this).toggleClass("blue-cell");
+			  } );
+			} );		
 </script>
-<!-- END JAVASCRIPTS -->
-<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
-<!-- END BODY -->
+    <script>
+$("#load_user").click(function(){
+    alert(1);
+  $("#load").load("/users/getusers");
+});</script>
+        <!-- Mirrored from www.keenthemes.com/preview/metronic_admin/page_portfolio.html by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 22 Mar 2014 18:50:43 GMT -->
 
-<!-- Mirrored from www.keenthemes.com/preview/metronic_admin/page_portfolio.html by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 22 Mar 2014 18:50:43 GMT -->
-</div></body>
+</html>

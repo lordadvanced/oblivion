@@ -6322,7 +6322,7 @@
 			"_fnDeleteIndex": _fnDeleteIndex,
 			"_fnReOrderIndex": _fnReOrderIndex,
 			"_fnColumnOrdering": _fnColumnOrdering,
-			"_fnLog": _fnLog,
+			"_fnLog": null,
 			"_fnClearTable": _fnClearTable,
 			"_fnSaveState": _fnSaveState,
 			"_fnLoadState": _fnLoadState,
@@ -6395,10 +6395,10 @@
 					}
 					else
 					{
-						_fnLog( DataTable.settings[i], 0, "Cannot reinitialise DataTable.\n\n"+
-							"To retrieve the DataTables object for this table, pass no arguments or see "+
-							"the docs for bRetrieve and bDestroy" );
-						return;
+					//	_fnLog( DataTable.settings[i], 0, "Cannot reinitialise DataTable.\n\n"+
+//							"To retrieve the DataTables object for this table, pass no arguments or see "+
+//							"the docs for bRetrieve and bDestroy" );
+//						return;
 					}
 				}
 				

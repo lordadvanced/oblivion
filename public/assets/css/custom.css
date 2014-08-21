@@ -69,6 +69,9 @@ padding:5px;
 div.errorMessage {
 color: red;
 font-weight: bold;
+text-align: center;
+font-family: Tahoma;
+font-size: 17px;
 }
 div.successMessage {
 color: green;
@@ -92,3 +95,29 @@ background-color: whitesmoke !important;
 .login .content .form-actions{
 background-color: whitesmoke !important;
 }
+.border-content-big {
+border: 3px solid #E3E3E3;
+}
+
+.error{
+    color:red;
+    font-weight: bold;      
+}
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+#form_addfund .modal-dialog{
+    width:1000px !important;
+}
+div#form_addfund {
+background: grey;
+}
+
+div#form_addfund .history table, th, td {
+border: none;
+border-collapse: collapse;
+}
+

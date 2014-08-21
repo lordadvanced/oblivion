@@ -1,0 +1,78 @@
+div#error_dishtype,div#error_dishtype_desc,div#dish_name_error,div#dish_desc_error,div#dishtype_error{
+    color:red;
+}
+.round_border{
+    border: solid 1px;
+border-radius: 10px;
+margin-right: 5px;
+width: 23%;
+}
+.hiscalendar{font-size:14px;font-weight:bold;}
+table{text-align:center;width: 100%;}
+
+.dayname{font-size:1.5em;}
+.dayname td{border: 2px solid #ffffff;background-color:#0BCEF3;}
+td{width:2em;height:4em;}
+.daycalendar td{border: 2px solid #B7FCEE;border-radius:10px;}
+.daycalendar td:hover{background-color:#98E5F8;}
+td.red-cell:hover{background-color:#0084FD;}
+.blue-cell{background:#0084FD;color:#ffffff;}
+.noneday{color:#B6B6B6;}
+.topcalendar td{background-color:#0BCEF3;border-top-left-radius:2em;border-top-right-radius:2em;}
+.botcalendar td{background-color:#0BCEF3;border-bottom-left-radius:2em;border-bottom-right-radius:2em;}
+
+.error{
+    color:red !important;
+}
+#delete_dish button.btn.red{
+    background: #d84a38;
+    color: white;
+}
+#delete_dish .modal-header {
+background: #ffb848;
+color: white;
+}
+#delete_dish button.btn.red{
+    background: #bb2413 !important;
+    color: white;
+}
+#header_cart img:hover{
+   background:#4775BE;
+}
+.modal-header{
+    background:#4d90fe;
+    color:white;
+}
+.modal-header .modal-title{
+    color:white;
+}
+#header_cart>a:hover{
+background: #4775BE;
+color:white;
+}
+span.cart_time {
+color: white;
+padding-right: 10px;
+}
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
+z-index: 99999999 !important;
+}
+div#order_success {
+color: green;
+font-size: 20px;
+padding: 0px;
+}
+div#order_date_error {
+font-size: 18px;
+padding: 0px;
+}
+div#collapse_3_1 {
+max-height: 400px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+div#list_item {
+max-height: 300px;
+overflow-x: hidden;
+overflow-y: auto;
+}

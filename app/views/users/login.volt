@@ -14,7 +14,7 @@
 <div id="login" class="login">
 <!-- BEGIN LOGO -->
 <div class="logo">
-    <a href="index.html">
+    <a href="#">
         <img src="../assets/img/logo.jpg" alt="" />
     </a>
 </div>
@@ -22,15 +22,10 @@
 <!-- BEGIN LOGIN -->
 <div class="content" style="border:solid;color:#4d90fe;">
     <!-- BEGIN LOGIN FORM -->
-    {{ form('users/login','class':'login-form', 'method': 'post') }}
+    <form action="/users/login" class="login-form" method="post">
         <h3 class="form-title"><?php echo $t->_("sign_in_title");?></h3>
 
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
-			<span>
-				 <?php echo $t->_("missing_username_pwd");?>
-			</span>
-        </div>
+
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
             <label class="control-label visible-ie8 visible-ie9"><?php echo $t->_("email_address");?></label>
@@ -38,7 +33,7 @@
             <div class="input-icon">
                 <i class="fa fa-user"></i>
                 <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="<?php echo $t->_("email_address");?>"
-                       name="email"/>
+                       name="username"/>
             </div>
         </div>
         <div class="form-group">
@@ -63,7 +58,17 @@
                 </div>
             </div>
         </div>
-        <p><?php $this->flashSession->output() ?></p>
+       
+        <?php if($this->flashSession->output()){?>
+            <div id="mess_show" class="alert alert-danger display-hide">
+                <button class="close" data-close="alert"></button>
+		        <span>
+                  <?php  $this->flashSession->output(); ?>
+                </span>
+            </div>
+	    <?php }; ?>
+           
+
         
         <div class="login-options">
             <h4>Or login with</h4>
@@ -136,6 +141,7 @@
                 <input class="form-control placeholder-no-fix" type="text" placeholder="Name" name="name"/>
             </div>
         </div>
+        <!--
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">RollNo</label>
 
@@ -156,7 +162,7 @@
         <p>
             Enter your account details below:
         </p>
-
+-->
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
             <label class="control-label visible-ie8 visible-ie9">Email</label>

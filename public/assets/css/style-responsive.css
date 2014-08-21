@@ -105,6 +105,7 @@ From Medium Devices Up To Larger Devices
 	  	position: fixed !important;
 	  	margin-left: 0;
 	 	top: 41px;
+		border-right: #787E88 solid 2px;
 	}
 
 	.page-sidebar-fixed ul.page-sidebar-menu > li.last {
@@ -421,7 +422,7 @@ From Medium Devices Up To Larger Devices
 	}
 
 	.page-sidebar-closed  .page-content {
-	  margin-left: 35px !important;
+	  margin-left: 0px !important;
 	}
 
 	/*** 

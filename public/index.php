@@ -129,6 +129,7 @@ try {
 			'error' => 'alert alert-error',
 			'success' => 'alert alert-success',
 			'notice' => 'alert alert-info',
+            ''
 		));
 	});
 
