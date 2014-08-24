@@ -12,16 +12,16 @@ class DishManagementController extends DishController
     {
         //check if there is any filei
        	$config = new Phalcon\Config\Adapter\Ini(__DIR__ . '/../config/config.ini');
-        $baseurl = $config->utdgame->linkUrl;
+        $baseurl = $config->application->linkUrl;
         $url = $config->utdgame->dish_add;
         if ($this->request->hasFiles() == true) {
             $isUploaded = false;
             $path=null;
             //for a loop handle each file individually
             foreach ($this->request->getUploadedFiles() as $upload) {
-                $path = $baseurl.'/assets/img/dish/' . md5(uniqid(rand(), true)) . '-' . strtolower($upload->
-                    getName());
-                ($upload->moveTo($config->application->basePath."/public".$path)) ? $isUploaded = true : $isUploaded = false;
+                $image= md5(uniqid(rand(), true)) . '-' . strtolower($upload->getName());
+                $path = $baseurl.'/assets/img/dish/' . $image;
+                ($upload->moveTo($config->application->basePath."/public/assets/img/dish/".$image)) ? $isUploaded = true : $isUploaded = false;
             }
             if($isUploaded==true) {
             $data = array(
@@ -33,7 +33,7 @@ class DishManagementController extends DishController
             $header = $this->session->get("accessCode");
             $return = $this->get_server_request($data, $url, $header, 'post');
             $data_dish = $this->objectToArray(json_decode($return));
-            if ($data_dish['dish_id']) {
+            if (isset($data_dish['dish_id'])) {
                 echo json_encode(array("message" => 1));
                 die;
             } else {
@@ -73,15 +73,16 @@ class DishManagementController extends DishController
         //check if there is any filei
        	$config = new Phalcon\Config\Adapter\Ini(__DIR__ . '/../config/config.ini');
         $url = $config->utdgame->dish_add;
+        $baseurl = $config->application->linkUrl;
         $dish_id  = $this->request->getPost("dish_id");
         $url = $url."/".$dish_id;
+        $path=null;
         if ($this->request->hasFiles() == true) {
-            $path=null;
             //for a loop handle each file individually
             foreach ($this->request->getUploadedFiles() as $upload) {
-                $path = $baseurl.'/assets/img/dish/' . md5(uniqid(rand(), true)) . '-' . strtolower($upload->
-                    getName());
-                ($upload->moveTo($config->application->basePath."/public".$path)) ? $isUploaded = true : $isUploaded = false;
+                $image= md5(uniqid(rand(), true)) . '-' . strtolower($upload->getName());
+                $path = $baseurl.'/assets/img/dish/' . $image;
+                ($upload->moveTo($config->application->basePath."/public/assets/img/dish/".$image)) ? $isUploaded = true : $isUploaded = false;
             }
         }
          $data = array(

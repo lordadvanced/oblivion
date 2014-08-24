@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Mvc\View, Phalcon\Mvc\Controller;
-class OrdersController extends BaseController
+class OrdersController extends CartController
 {
     public function initialize()
     {
@@ -13,6 +13,7 @@ class OrdersController extends BaseController
             $url = $config->utdgame->order_link;
             $url = $url."/".$order_id;
             $header = $this->session->get("accessCode");
+           
             $return = $this->get_server_request(null, $url,$header,'get');
             $order_detail = $this->objectToArray(json_decode($return));
             return $order_detail;
@@ -24,6 +25,8 @@ class OrdersController extends BaseController
             $header = $this->session->get("accessCode");
             $return = $this->get_server_request($data, $url,$header,'post');
             $order_detail = $this->objectToArray(json_decode($return));
+             //print_r($header);
+            
             return $order_detail;
             
         }
@@ -50,9 +53,14 @@ class OrdersController extends BaseController
             $data_list = ($this->request->getPost('dishes'));
             $data['dishes'] = explode("|",$data_list);
         }
+       // print_r($data);
+        
         $order_detail = $this->sendorder($data);
+        
+        //print_r($order_detail);
         if(isset($order_detail['order_id'])){
             $this->getuserinfo();
+            CartController::clearcart();
             echo json_encode(array("message" => 1));
             die;
         }else if(isset($order_detail['error'])){

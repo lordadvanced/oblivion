@@ -12,12 +12,17 @@
 								<ul class="nav nav-tabs">
 									<li class="active">
 										<a href="#tab_1_1" data-toggle="tab">
-											<h4><strong>Pick Combo</strong></h4>
+											<h4><strong><?php echo $t->_("pick_combo"); ?></strong></h4>
 										</a>
 									</li>
 									<li class="">
 										<a href="#tab_1_2" data-toggle="tab">
-											<h4><strong>Pick Each</strong></h4>
+											<h4><strong><?php echo $t->_("pick_dish"); ?></strong></h4>
+										</a>
+									</li>
+        	                         <li class="">
+										<a href="#tab_1_3" data-toggle="tab">
+											<h4><strong><?php echo $t->_("suggested_combo"); ?></strong></h4>
 										</a>
 									</li>
 								</ul>
@@ -29,7 +34,7 @@
 										<div id="homepage_combo" class="row mix-grid">
                                         <script>$('#homepage_combo').load('/combo/gethomepagecombo');</script>
 										</div>
-                                    </div>
+                            </div>
 							<!-- END FILTER COMBO-->
 								
 							
@@ -37,6 +42,15 @@
 							</div>
 							<!--TAB EACH-->
 							<div class="tab-pane fade" id="tab_1_2">
+                                <div class="margin-top-10">
+								    <div id="homepage_dish" class="row mix-grid">
+								<!-- BEGIN FILTER EACH-->
+									   <script>$('#homepage_dish').load('/dish/listdishes');</script>
+							<!-- END FILTER EACH-->
+                                    </div>
+                                </div>
+							</div>
+                           <div class="tab-pane fade" id="tab_1_3">
 								<!-- BEGIN FILTER EACH-->
 									
 							<!-- END FILTER EACH-->

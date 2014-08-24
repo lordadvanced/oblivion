@@ -1,12 +1,37 @@
-<div id="tab_4-4" class="tab-pane">
-                                                    <div class="box">
-                                                        <div class="col-md-8 col-md-offset-2">
-                                                            <div class="input-group input" style="margin-bottom:25px;">
-                                                                <input type="text" class="form-control" placeholder="Name or Email">
-                                                                <span class="input-group-btn">
-														<button class="btn blue" type="button">Search!</button>
-													</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+<div id="tab_4-4" class="tab-pane ">
+                                                    <table class="table table-bordered table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    Notification to user.
+                                                                </td>
+                                                                <td>
+                                                                    <label class="uniform-inline">
+                                                                        <input type="radio" name="optionsRadios1" value="option1" checked="">Yes</label>
+                                                                    <label class="uniform-inline">
+                                                                        <input type="radio" name="optionsRadios1" value="option2">No</label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Cannot remove menu.
+                                                                </td>
+                                                                <td>
+                                                                    <label class="uniform-inline">
+                                                                        <input type="checkbox" value="">Yes</label>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    Notification when receive feedback.
+                                                                </td>
+                                                                <td>
+                                                                    <label class="uniform-inline">
+                                                                        <input type="checkbox" value="" checked="">Yes</label>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <button type="submit" class="btn green">Save</button>
+                                                    <button type="button" class="btn default">Cancel</button>
                                                 </div>

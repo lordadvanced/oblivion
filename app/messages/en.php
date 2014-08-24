@@ -110,7 +110,25 @@ $messages = array(
     "suggest_dish_price"=>"You will pay ",
     "suggest_dtype_name"=>"If choose the dish at ",
     "dish_detail" => "Dish List Detail",
-    "order_dish"  => "Order Dish"
-    
+    "order_dish"  => "Order Dish",
+    "pick_combo"=>"Pick Combo",
+    "pick_dish"=>"Pick Dish",
+    "suggested_combo"=>"Suggested Combo",
+    "change_password"=>"Change Password",
+    "oldpwd_null"=>"Please enter your old password",
+    "newpwd_null"=>"Please enter your new password",
+    "newpwd_match"=>"Your retype new password not matched",
+    "newpwd_same"=>"Your old password same your new password!",
+    "changepwd_success"=>"Your password has been changed !",
+    "changepwd_error"=>"Change your password has error!",
+    "oldpwd_error"=>"Your current password is wrong !",
+    "nationality_null"=>"Please enter your nationality !",
+    "enter_nationality" =>"Enter your nationality",
+    "religion_null"=>"Please enter your religion !",
+    "enter_religion" =>"Enter your religion",
+    "dishtype_management"=>"Dishtype Management",
+    "combo_management"=>"Combo Management",
+    "clear_cart"=>"Clear Cart",
+    "check_out"=>"Check out"
     
 );

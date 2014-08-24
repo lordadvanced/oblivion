@@ -33,11 +33,7 @@
 				Account
 			</a>
 		</li>
-		<li class="">
-			<a href="#tab_3_3" data-toggle="tab">
-				Order
-			</a>
-		</li>
+
 	</ul>
 	<div class="tab-content">
 	<!--tab_1_1-->
@@ -207,11 +203,12 @@
                                                                         <label class="control-label col-md-3">
                                                                         <?php echo $t->_("full_name");?></label>
                                                                         <div class="col-md-9">
-                                                                            <input id="full_name" name="full_name" type="text" class="form-control" placeholder="<?php echo $t->_("enter_full_name");?>">
+                                                                            <input id="full_name" name="full_name" type="text" class="form-control" value="<?php echo $user_profile['name'];?>" placeholder="<?php echo $t->_("enter_full_name");?> ">
                                                                             <div id="full_name_error" name="full_name_error" class="error full_name_error" style="display:none;"><br>
                                                                                <?php echo $t->_("fname_null");?></div>
                                                                         </div>
                                                                     </div>
+                                                                    
                                                                     <div class="form-group">
 										<label class="col-md-3 control-label"><?php echo $t->_("gender");?></label>
 										<div class="col-md-2">
@@ -226,10 +223,10 @@
                                                                         <label class="control-label col-md-3">
                                                                         <?php echo $t->_("dob");?></label>
                                                                         <div class="col-md-9">
-                                                                            <input id="dob" name="dob" type="text" class="form-control" placeholder="<?php echo $t->_("dob_ex");?>">
-                                                                            <div id="dob_error" name="dob_error" class="error dob_error" style="display:none;"><br>
+                                                                            <input value="<?php echo $user_profile['date_of_birth'];?>" id="dob" name="dob" type="text" class="form-control" placeholder="<?php echo $t->_("dob_ex");?>">
+                                                                            <div id="dob_error"  class="error dob_error" style="display:none;"><br>
                                                                                <?php echo $t->_("dob_null");?></div>
-                                                                               <div id="dobtype_error" name="dobtype_error" class="error dobtype_error" style="display:none;"><br>
+                                                                               <div id="dobtype_error"  class="error dobtype_error" style="display:none;"><br>
                                                                                <?php echo $t->_("dobtype_error");?></div>
                                                                         </div>
                                                                     </div>
@@ -238,15 +235,34 @@
                                                                         <label class="control-label col-md-3">
                                                                         <?php echo $t->_("mobile_number");?></label>
                                                                         <div class="col-md-9">
-                                                                            <input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="<?php echo $t->_("enter_mobile");?>">
+                                                                            <input value="<?php echo $user_profile['mobile_phone'];?>" id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="<?php echo $t->_("enter_mobile");?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group ">
                                                                         <label class="control-label col-md-3">
-                                                                            <?php echo $t->_("description");?></label>
+                                                                        <?php echo $t->_("nationality");?></label>
                                                                         <div class="col-md-9">
-                                                                            <textarea id="user_desc" name="user_desc" class="form-control" rows="3" placeholder="<?php echo $t->_('enter_description');?> "></textarea>
-
+                                                                            <input value="<?php echo $user_profile['nationality'];?>" id="nationality" name="nationality" type="text" class="form-control" placeholder="<?php echo $t->_("enter_nationality");?>">
+                                                                            <div id="nationality_error" class="error nationality_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("nationality_null");?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                        <?php echo $t->_("religion");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <input value="<?php echo $user_profile['religion'];?>" id="religion" name="religion" type="text" class="form-control" placeholder="<?php echo $t->_("enter_religion");?>">
+                                                                            <div  id="religion_error" class="error religiony_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("religion_null");?></div>
+                                                                        </div>
+                                                                    </div>
+                                                                   <div class="form-group ">
+                                                                        <label class="control-label col-md-3">
+                                                                        <?php echo $t->_("access_code");?></label>
+                                                                        <div class="col-md-9">
+                                                                            <input value="<?php echo $user_profile['access_code'];?>" id="access_code" name="access_code" type="text" class="form-control" placeholder="<?php echo $t->_("enter_access_code");?>">
+                                                                            <div  id="access_error" class="error access_error" style="display:none;"><br>
+                                                                               <?php echo $t->_("access_null");?></div>
                                                                         </div>
                                                                     </div>
                                                                     
@@ -294,7 +310,7 @@
 						<div class="portlet box blue">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-reorder"></i>Change Password
+									<i class="fa fa-reorder"></i><?php echo $t->_("change_passowrd");?>
 								</div>
 								<div class="tools">
 									<a href="#" class="collapse">
@@ -308,29 +324,37 @@
 								<form action="#" class="form-horizontal form-bordered">
 									<div class="form-body">
 									<!--CONTENT-->
-												<div class="form-group">
-													<label class="control-label">Current Password</label>
-													<input type="password" class="form-control">
+                                                <div class="form-group">
+                                                    <div id="changepwd_success" class="col-md-12 value success" style="display: none;color:green"><?php echo $t->_("changepwd_success");?></div>
+                                                            <div id="changepwd_error" class="col-md-12 value error" style="display: none;"><?php echo $t->_("changepwd_error");?></div>
+                                                            <div id="oldpwd_error" class="col-md-12 value error" style="display: none;"><?php echo $t->_("oldpwd_error");?></div>
+                                                            <div id="changepwd_unerror" class="col-md-12 value error" style="display: none;"><?php echo $t->_("unknown");?></div>
+                                                </div>
+												<div class="form-group ">
+													<label class="control-label ">Current Password</label>
+													<input id="old_pwd" type="password" class="form-control ">
+                                                    <div id="oldpwd_null" class="error oldpwd_error" style="display:none;"><?php echo $t->_("oldpwd_null");?></div>
 												</div>
 												<div class="form-group">
-													<label class="control-label">New Password</label>
-													<input type="password" class="form-control">
+													<label class="control-label ">New Password</label>
+													<input  id="new_pwd" type="password" class="form-control col-md-9"/>
+                                                    <div id="newpwd_null" class="error newpwd_error" style="display:none;"><?php echo $t->_("newpwd_null");?></div>
+                                                    <div id="newpwd_same" class="error newpwd_error" style="display:none;"><?php echo $t->_("newpwd_same");?></div>
 												</div>
 												<div class="form-group">
-													<label class="control-label">Re-type New Password</label>
-													<input type="password" class="form-control">
+													<label class="control-label ">Re-type New Password</label>
+													<input id="retype_new_pwd" type="password" class="form-control col-md-9"/>
+                                                    <div id="retype_match" class="error retype_match_error" style="display:none;"><?php echo $t->_("newpwd_match");?></div>
 												</div>	
 									</div>
 									<div class="form-actions fluid">
 										<div class="row">
 											<div class="col-md-12">
 												<div class="col-md-offset-3 col-md-9">
-													<a href="#" class="btn green">
-														Save
+													<a href="#" onclick="change_pwd();return false;" class="btn green">
+														<?php echo $t->_("save");?>
 													</a>
-													<a href="#" class="btn default">
-														Cancel
-													</a>
+												
 												</div>
 											</div>
 										</div>
@@ -343,54 +367,7 @@
 					</div>
 					<!--USER HISTORY-->
 					<div id="tab_2-2" class="tab-pane">
-						<!--CANCEL HISTORY-->
-						<div class="portlet box blue">
-							<div class="portlet-title">
-								<div class="caption">
-									<i class="fa fa-reorder"></i>Cancel Order History
-								</div>
-								<div class="tools">
-									<a href="#" class="collapse">
-									</a>
-								</div>
-							</div>
-							<!-- BEGIN FORM-->
-							<div class="portlet-body form">
-								<div class="col-md-10 col-md-offset-1">
-								<table class="table table-bordered table-striped">
-										<tbody><tr>
-										  <th><span>Date</span></th>
-										  <th><span>Name of Food</span></th>		
-										  <th><span>Price (VND)</span></th>
-										</tr>
-										<tr>
-										  <td>3/6/2014</td>
-										  <td>
-											Combo 2
-										  </td>		
-										  <td>
-											40,000
-										  </td>
-										</tr>
-										<tr>
-										  <td>2/6/2014</td>
-										  <td>
-											Combo 4
-										  </td>		
-										  <td>35,000</td>
-										</tr>
-										<tr>
-										  <td>1/6/2014</td>
-										  <td>
-											Combo 2
-										  </td>		
-										  <td>60,000</td>
-										</tr>
-								</tbody></table>
-								
-								</div>
-							</div>	
-						</div>
+						
 						<!--PAYMENT HISTORY-->
 						<div class="portlet box blue">
 							<div class="portlet-title">
@@ -500,19 +477,7 @@
 			<!--end col-md-9-->
 		</div>
 	</div>
-	<div class="tab-pane" id="tab_3_3">
-				<!--CALENDAR ORDER-->
-									<table class="hisCalendar" align="center">
-										<tbody><tr class="monthname topcalendar"><td colspan="7"><h1><strong>July 2014</strong></h1></td></tr>
-										<tr class="dayname"><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr>
-										<tr class="daycalendar"><td class="noneday">29</td><td class="noneday">30</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-										<tr class="daycalendar"><td td="" class="blue-cell">6</td><td td="" class="blue-cell">7</td><td>8</td><td class="blue-cell">9</td><td>10</td><td>11</td><td>12</td></tr>
-										<tr class="daycalendar"><td td="" class="blue-cell">13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-										<tr class="daycalendar"><td>20</td><td>21</td><td>22</td><td class="blue-cell">23</td><td>24</td><td>25</td><td>26</td></tr>
-										<tr class="daycalendar"><td>28</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="noneday">1</td><td class="noneday">2</td></tr>										
-									<tr class="botcalendar"><td colspan="7"><h3><strong>Order History</strong></h3></td></tr>
-									</tbody></table>
-								</div>
+	
 	</div>
 	<!--end tab-pane-->
 	</div>
@@ -526,18 +491,8 @@
 	</div>
 <!-- END CONTAINER -->
 <?php require_once( '../app/menu/footer.php');?>
-<script>
-			$( function() {
-			  $('.daycalendar td').click( function() {
-				$(this).toggleClass("blue-cell");
-			  } );
-			} );		
-</script>
-    <script>
-$("#load_user").click(function(){
-    alert(1);
-  $("#load").load("/users/getusers");
-});</script>
+		
+
         <!-- Mirrored from www.keenthemes.com/preview/metronic_admin/page_portfolio.html by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 22 Mar 2014 18:50:43 GMT -->
 
 </html>

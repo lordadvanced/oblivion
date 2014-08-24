@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <!-- END PAGE CONTENT-->
-                    <?php require( '../app/modules/homepage/combolist.php');?>
+                    <?php require( '../app/extra/combolist.php');?>
 
                     <!-- END PAGE CONTENT-->
                 </div>

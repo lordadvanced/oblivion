@@ -40,9 +40,10 @@ class Security extends Plugin
             //Public area resources
 			$publicResources = array(
 				'home' => array('index'),
-   	            'users' => array('index','login','logout','getusers','confirm'),
-                'dish' => array('listdish','index','getdishfororderAction','getdishtype','getonedishtype','getalldish','getonedish','gethotdish','getdishfororder','getoption'),
+   	            'users' => array('index','login','logout','getusers','confirm','forgotpwd','resetpassword'),
+                'dish' => array('listdishes','index','getdishfororderAction','getdishtype','getonedishtype','getalldish','getonedish','gethotdish','getdishfororder','getoption'),
                 'combo'=>array('getcombobyid','gethomepagecombo','getcombofororder'),
+               
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -52,9 +53,10 @@ class Security extends Plugin
            	    'account'=> array('index'),
                 'payment' => array('index', 'addfund', 'confirm'),
                 'feedback' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-                'account' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
+                'account' => array('index','updateuser'),
                 'cart'=>array('addcart','showcart','clearcart'),
                 'orders'=>array('add','index','all'),
+
 			);
             foreach ($usersResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -76,7 +78,7 @@ class Security extends Plugin
             //Admin area resoure
            	$adminResources = array(
 		       	'home' => array('index'),
-   	            'users' => array('index','login','logout','getusers'),
+   	            'users' => array('index','login','logout','getusers','changepwd'),
                 'payment' => array('index', 'addfund', 'confirm'),
                 "dishmanagement"=>array("insertdish",'loaddish','deletedish','updatedish'),
                 'dishtypemanagement' => array('index','adddishtype','all','getdishtype','loaddishtype','update'),

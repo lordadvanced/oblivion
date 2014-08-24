@@ -156,14 +156,4 @@
     <?php require_once('../app/extra/modal.php');?>
     <?php require_once( '../app/menu/footer.php');?>
     
-    <script>
-jQuery(document).ready(function() {       
-   TableAdvanced.init();
-});
-$("#load_user").click(function(){
-//    alert(1);
-  $("#load").load("/users/getusers");
-});</script>
-        <!-- Mirrored from www.keenthemes.com/preview/metronic_admin/page_portfolio.html by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 22 Mar 2014 18:50:43 GMT -->
-
 </html>

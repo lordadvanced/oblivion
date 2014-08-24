@@ -7,12 +7,11 @@
 
 </head>
 <script>
-
-function refresh_dish_list(){
-    jQuery(document).ready(function() {
+$(document).ready(function() {
 TableAdvanced.init();
 });
-    $('#form_list_dish').load('/dish/getalldish');
+function refresh_dish_list(){
+$('#form_list_dish').load('/dish/getalldish');
 }
 </script>
 
@@ -29,7 +28,7 @@ TableAdvanced.init();
 						</div>
 <div class="portlet-body listfood  table-responsive">
 						<!-- de id=sample moi co cai sort-->
-							<table class="table table-bordered table-hover table-full-width  table-responsive" id="dishdt">
+							<table class="table table-bordered table-hover table-full-width  table-responsive" id="dishesdt">
 							<thead>
 							<tr>
 								<th>

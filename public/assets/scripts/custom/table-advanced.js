@@ -1,6 +1,6 @@
 var TableAdvanced = function () {
     var initTable1 = function() {
-        var oTable = $('#dishdt').dataTable( {           
+        var oTable = $('#dishesdt').dataTable( {           
             "aoColumnDefs": [
                 { "aTargets": [ 0 ] }
             ],
@@ -12,10 +12,10 @@ var TableAdvanced = function () {
             // set the initial value
             "iDisplayLength": 10,
         });
-        jQuery('#dishdt_wrapper .dataTables_filter input').addClass("form-control input-small input-inline"); // modify table search input
-        jQuery('#dishdt_wrapper .dataTables_length select').addClass("form-control input-small"); // modify table per page dropdown
-        jQuery('#dishdt_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
-        $('#dishdt_column_toggler input[type="checkbox"]').change(function(){
+        jQuery('#dishesdt_wrapper .dataTables_filter input').addClass("form-control input-small input-inline"); // modify table search input
+        jQuery('#dishesdt_wrapper .dataTables_length select').addClass("form-control input-small"); // modify table per page dropdown
+        jQuery('#dishesdt_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
+        $('#dishesdt_column_toggler input[type="checkbox"]').change(function(){
             /* Get the DataTables object again - this is not a recreation, just a get of the object */
             var iCol = parseInt($(this).attr("data-column"));
             var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
@@ -35,10 +35,10 @@ var TableAdvanced = function () {
             // set the initial value
             "iDisplayLength": 10,
         });
-        jQuery('#dishdt_wrapper .dataTables_filter input').addClass("form-control input-small input-inline"); // modify table search input
-        jQuery('#dishdt_wrapper .dataTables_length select').addClass("form-control input-small"); // modify table per page dropdown
-        jQuery('#dishdt_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
-        $('#dishdt_column_toggler input[type="checkbox"]').change(function(){
+        jQuery('#dishtypedt_wrapper .dataTables_filter input').addClass("form-control input-small input-inline"); // modify table search input
+        jQuery('#dishtypedt_wrapper .dataTables_length select').addClass("form-control input-small"); // modify table per page dropdown
+        jQuery('#dishtypedt_wrapper .dataTables_length select').select2(); // initialize select2 dropdown
+        $('#dishtypedt_column_toggler input[type="checkbox"]').change(function(){
             /* Get the DataTables object again - this is not a recreation, just a get of the object */
             var iCol = parseInt($(this).attr("data-column"));
             var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;

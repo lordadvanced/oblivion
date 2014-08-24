@@ -53,7 +53,7 @@
                 App.init();
                 Portfolio.init();
                 ComponentsPickers.init();
-                
+                TableAdvanced.init();
             });
         </script>
         <!-- END JAVASCRIPTS -->

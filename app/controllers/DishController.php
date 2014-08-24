@@ -151,24 +151,21 @@ class DishController extends BaseController
             //    $view->error_messages = $message;
         }
     }
-    public function listdishAction(){
+    public function listdishesAction(){
         $data_dish = $this->getdishbyid(null);
         $data_dtype = $this->getdishtypebyid(null);
         $data= array();
         $i=0;
         foreach($data_dtype as $dtype){ 
-            $dtype_data = array();
+            $dtype['data']= array();
             foreach($data_dish as $dish){
-                $dtype['data']= array();
                 if($dish['dtype_detail']['dtype_id']==$dtype['dtype_id'])
                 {
                    $dtype['data'][] = $dish;
                 }
-                $dtype_data[] = $dtype;
             }
-            $data[] = $dtype_data;
+            $data[] = $dtype;
         }
-        print_r($data);
-        die;
+        $this->view->setVar("dish_data", $data);
     }
 }

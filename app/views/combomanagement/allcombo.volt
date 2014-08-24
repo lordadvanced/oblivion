@@ -26,7 +26,7 @@ function refresh_combo_list(){
 								</a>
 							</div>
 						</div>
-<div class="portlet-body listfood">
+<div class="portlet-body listcombo">
 						<!-- de id=sample moi co cai sort-->
 							<table class="table table-bordered table-hover table-full-width" id="combodt">
 							<thead>

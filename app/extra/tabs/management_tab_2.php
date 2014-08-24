@@ -54,7 +54,7 @@
                                                             <!-- END FORM-->
                                                         </div>
                                                     </div>
-                                                    <div class="portlet-body form list_dish_full" id="list_dishtype_full" >
+                                                    <div class="portlet-body form list_dishtype_full" id="list_dishtype_full" >
 						                      	<!-- BEGIN FORM-->
                                                     <div id="form_list_dishtype">
                                                             <script>$('#form_list_dishtype').load('dishtypemanagement/all');</script>

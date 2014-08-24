@@ -101,7 +101,7 @@
     </form>
     <!-- END LOGIN FORM -->
     <!-- BEGIN FORGOT PASSWORD FORM -->
-    <form class="forget-form" action="#" method="post">
+    <form class="forget-form" action="/users/forgotpwd" method="post">
         <h3>Forget Password ?</h3>
 
         <p>
@@ -111,8 +111,8 @@
         <div class="form-group">
             <div class="input-icon">
                 <i class="fa fa-envelope"></i>
-                <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email"
-                       name="email"/>
+                <input id="email_reset" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email"
+                       name="email_reset"/>
             </div>
         </div>
         <div class="form-actions">
@@ -124,6 +124,7 @@
             </button>
         </div>
     </form>
+    
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
     <form class="register-form" action="/users/signup" method="post">

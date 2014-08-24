@@ -1,5 +1,5 @@
 <?php
-
+include_once('../app/plugins/Session.php');
 error_reporting(E_ALL);
 
 try {
@@ -115,10 +115,10 @@ try {
 	/**
 	 * Start the session the first time some component request the session service
 	 */
-	$di->set('session', function(){
-		$session = new Phalcon\Session\Adapter\Files();
-		$session->start();
-		return $session;
+    $di->set('session', function() use ($config) {
+		$session = new Session($config->session->toArray()); 
+        $session->start();
+        return $session;
 	});
 
 	/**

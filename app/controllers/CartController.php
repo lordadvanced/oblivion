@@ -25,6 +25,7 @@ class CartController extends DishController
         }
     }
     public function check_rule($dish_id){
+        
          $admin_option = $this->session->get('admin_option');
          if(!isset($admin_option)){
             $admin_option = $this->getadminoption();
@@ -40,19 +41,24 @@ class CartController extends DishController
         $hasNext = 0;
         //$check_admin_option = sizeof($admin_option);
         //echo "leng of admin option is ".$check_admin_option;
-        foreach($admin_option as $option){
-            if(isset($admin_option[1])){
+        if(isset($admin_option[0])){
                 $hasNext = 1;
             }else{
                 $hasNext = 0;   
             }
+        sort($admin_option);
+        foreach($admin_option as $option){
+            
             //echo "array has ".$hasNext ;
+            
             $temp_option = $option;
             $check=0;
             for($i=sizeof($temp_option['dtypes'])-1; $i>=0;$i--){
+                sort($temp_option['dtypes']);
+                //print_r($temp_option['dtypes']);
                 if(isset($temp_option['dtypes'][$i]) ){
-                   // echo $temp_option['dtypes'][$i] ."|". $dtype_id;
-                  if($temp_option['dtypes'][$i] == $dtype_id && $check<1  ){
+                    //echo $temp_option['dtypes'][$i] ."|". $dtype_id;
+                  if(($temp_option['dtypes'][$i] == $dtype_id) && $check<1  ){
                    // echo $check." lan";
                     
                     unset($temp_option['dtypes'][$i]);
@@ -103,10 +109,24 @@ class CartController extends DishController
                 $admin_option = $this->session->get('admin_option');
                 //print_r($admin_option);
                 if(sizeof($admin_option)>0){
-                    if(isset($admin_option[0]['dtypes'][0]))
-                    $dtype_info =  DishController::getdishtypebyid($admin_option[0]['dtypes'][0]);
+                    foreach($admin_option as $option){
+                    if(sizeof($option['dtypes'])>0)
+                    {
+                        $dtype_id_get=1;
+                        if(sizeof($option['dtypes']>1)){
+                        $dtype_id_get = $option['dtypes'][array_rand($option['dtypes'],1)];
+                       
+                        }
+                        else{
+                            foreach ($option['dtypes'] as $key => $val) {
+                                $dtype_id_get = $val;
+                            }
+                        }
+                        $dtype_info =  DishController::getdishtypebyid($dtype_id_get);
+                    }
                     else{
                         $dtype_info['dtype_name'] ="none";
+                    }
                     }
                 } 
                 $data_return = array(
@@ -118,6 +138,7 @@ class CartController extends DishController
                     $data['dish_id'][] = $dish_id;
                     $this->session->set('cart',$data);
                     $data_return['cart_quantity'] = sizeof($data['dish_id']);
+
                     //print_r($this->session->get('dtype_list'));
                     echo json_encode(array("message" => 1,"data"=>$data_return));
                     die;
@@ -134,6 +155,7 @@ class CartController extends DishController
     }
     
     public function showcartAction(){
+        //$cookie = $this->session->getCookieOptions();
         $cart = $this->session->get('cart');
         $cart_data = array();
         $dish_list_id = "";
@@ -145,11 +167,13 @@ class CartController extends DishController
         $this->view->setVar("dish_list", $cart_data);
         $this->view->setVar("dish_id_list", $dish_list_id);
     }
-    
-    public function clearCartAction(){
+    public function clearcart(){
         $this->session->set('admin_option',$this->getadminoption());
         $this->session->set('cart',null);
         $this->session->set('dtype_list',null);
+    }
+    public function clearCartAction(){
+        $this->clearcart();
          return $this->response->redirect("home");
     }
 }
