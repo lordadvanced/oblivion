@@ -76,11 +76,21 @@ function refresh_order_list(){
 									<?php if(isset($order['order_note'])) echo $order['order_note'];?>
 								</td>
                                 <td>
-                                    <?php if(strtotime($order['apply_date']) < time()){;?>
-                                        <span style="color:green;"><?php echo $t->_("complete");?></span>
-                                    <?php }else{ ?>
-									 <a class="edit-order" href="#"  data-target="#edit_order" data-toggle="modal">Edit</a>
-                                    <?php } ?>
+                                
+                                <?php
+                                    if($order['editable'] == 0){
+                                        if($order['decline'] == 1){
+                                           echo '<span style="color:red;">'.$t->_("Canceled").'</span>';
+
+                                        }else{
+                                           echo '<span style="color:green;">'.$t->_("complete").'</span>';
+                                        }
+                                    }else{
+                                        echo '<a class="edit-order" href="/orders/loadform?order_id='.$order['order_id'].'"  data-target="#del_order" data-toggle="modal">Delete </a>';
+                                    }
+                                    
+                                ?>
+                                  
                                 </td>
 							</tr>
 							  <?php };?>	

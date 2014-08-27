@@ -140,3 +140,17 @@
     </div>
 </div>
 <!-- END  MODAL FOR EDIT COMBO-->
+<!-- START MODAL FOR DEL ORDER -->
+<div class="modal fade" id="del_order" role="basic" aria-hidden="true">
+    <div class="page-loading page-loading-boxed">
+        <img src="/assets/img/loading-spinner-grey.gif" alt="" class="loading">
+        <span>
+										&nbsp;&nbsp;Loading...
+        </span>
+    </div>
+    <div class="modal-dialog ">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<!-- END  MODAL FOR DEL ORDER-->

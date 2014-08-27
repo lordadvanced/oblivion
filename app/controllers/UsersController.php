@@ -133,6 +133,8 @@ class UsersController extends BaseController
     public function logoutAction()
     {
         $this->session->destroy();
+        $this->session->set('accessCode',null);
+        $header = $this->session->get('accessCode');
         $this->response->redirect("/home/index", true)->send();
     }
     public function accessAction()

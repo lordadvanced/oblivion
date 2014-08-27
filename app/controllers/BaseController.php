@@ -5,7 +5,7 @@ class BaseController extends Phalcon\Mvc\Controller
 
     protected function initialize()
     {
-        Phalcon\Tag::prependTitle('Phalcon | ');
+        Phalcon\Tag::prependTitle('Oblivion | ');
         $this->view->setVar("t", $this->_getTranslation());
     }
 

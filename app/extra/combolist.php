@@ -52,7 +52,11 @@
 							</div>
                            <div class="tab-pane fade" id="tab_1_3">
 								<!-- BEGIN FILTER EACH-->
-									
+									<div id="homepage_suggest_combo" class="row mix-grid">
+								<!-- BEGIN FILTER EACH-->
+									   <script>$('#homepage_suggest_combo').load('/combo/suggestcombo');</script>
+							<!-- END FILTER EACH-->
+                                    </div>
 							<!-- END FILTER EACH-->
 						
 							</div>

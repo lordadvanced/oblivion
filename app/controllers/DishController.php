@@ -5,7 +5,7 @@ class DishController extends BaseController
     public function initialize()
     {
         // $this->view->setTemplateAfter('main');
-        Phalcon\Tag::setTitle('Welcome to Dish Control');
+        Phalcon\Tag::setTitle('Dish Control Page');
         parent::initialize();
     }
     public function getdishbyid($dish_id){

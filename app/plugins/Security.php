@@ -42,7 +42,7 @@ class Security extends Plugin
 				'home' => array('index'),
    	            'users' => array('index','login','logout','getusers','confirm','forgotpwd','resetpassword'),
                 'dish' => array('listdishes','index','getdishfororderAction','getdishtype','getonedishtype','getalldish','getonedish','gethotdish','getdishfororder','getoption'),
-                'combo'=>array('getcombobyid','gethomepagecombo','getcombofororder'),
+                'combo'=>array('gethomepagecombo','getcombofororder','suggestcombo'),
                
 			);
 			foreach ($publicResources as $resource => $actions) {
@@ -55,7 +55,8 @@ class Security extends Plugin
                 'feedback' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
                 'account' => array('index','updateuser'),
                 'cart'=>array('addcart','showcart','clearcart'),
-                'orders'=>array('add','index','all'),
+                'orders'=>array('add','index','all','del','loadform'),
+                'combo'=>array('ordersuggest'),
 
 			);
             foreach ($usersResources as $resource => $actions) {
@@ -87,7 +88,7 @@ class Security extends Plugin
                 'account' => array('index', 'updateuser'),
                 'management' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
                 'cart'=>array('addcart','showcart','clearcart'),
-                'orders'=>array('add','index','all'),
+                'orders'=>array('add','index','all','del','loadform'),
 			);
 			foreach ($adminResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);

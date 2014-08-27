@@ -91,7 +91,7 @@ if (isset($access)) { ?>
                     </a>
                 </li>
                
-                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- BEGIN NOTIFICATION DROPDOWN
                 <li class="dropdown" id="header_notification_bar">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <i class="fa fa-warning"></i>
@@ -161,8 +161,10 @@ if (isset($access)) { ?>
                         </li>
                     </ul>
                 </li>
+                 -->
                 <!-- END NOTIFICATION DROPDOWN -->
-                <!-- BEGIN INBOX DROPDOWN -->
+                
+                <!-- BEGIN INBOX DROPDOWN
                 <li class="dropdown" id="header_inbox_bar">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <i class="fa fa-envelope"></i>
@@ -241,6 +243,7 @@ if (isset($access)) { ?>
                         </li>
                     </ul>
                 </li>
+                 -->
                 <!-- END INBOX DROPDOWN -->
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                  <?php $user_profile = $this->session->get("user_profile");?>

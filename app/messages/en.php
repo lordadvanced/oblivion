@@ -129,6 +129,10 @@ $messages = array(
     "dishtype_management"=>"Dishtype Management",
     "combo_management"=>"Combo Management",
     "clear_cart"=>"Clear Cart",
-    "check_out"=>"Check out"
+    "check_out"=>"Check out",
+    "total"=>"Total",
+    "over_money_error"=>"You do not have enough money!",
+    "delete_order_info"=>"Order Information for delete",
+    "delete"=>"Delete",
     
 );

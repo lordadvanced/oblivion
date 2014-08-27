@@ -7,7 +7,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-										<span>
+											<span>
 											 <?php echo $t->_("combo_detail");?>
 										</span>
 										</h4>
@@ -80,7 +80,7 @@
                         <form id="order_form" class="form-horizontal form-bordered" action="/order/add">
                             <div class="form-body">
                                 <div class="form-group">
-                                    <input type="hidden" id="combo_id" name="combo_id" value="<?php echo $combo_list['combo_id'];?>" />
+                                    <input type="hidden" id="dish_id" name="dish_id" value="<?php echo $combo_list['dish_list'];?>" />
                                     <label class="control-label col-md-3">
                                         <?php echo $t->_("choose_time");?></label>
                                     <div class="col-md-8">
@@ -142,7 +142,7 @@
 																Combo name :
 															</div>
 															<div class="col-md-7 value" id="name_value">
-                                                            <?php echo $combo_list['combo_name'];?>
+                                                            Suggest Combo
 															</div>
 														</div>
 														<div class="row static-info">
@@ -176,12 +176,12 @@
 															</div>
 															<div class="col-md-7 value">
 															     <div class="col-md-7 value">
-                                                                 <?php echo $combo_list['combo_price'];?>
+                                                                 <?php  if(isset($combo_list['price']))echo $combo_list['price'];?>
 															     </div>
 															</div>
 														</div>
                                                         <div class="row static-info" >
-                                                         <div class="col-md-12 value">
+                                                        <div class="col-md-12 value">
                                                             <div id="order_success" class="col-md-12 value success" style="display: none;"><?php echo $t->_("order_success");?></div>
                                                             <div id="order_error" class="col-md-12 value error" style="display: none;"><?php echo $t->_("order_error");?></div>
                                                              <div id="order_date_error" class="col-md-12 value error" style="display: none;"><?php echo $t->_("date_order_error");?></div>

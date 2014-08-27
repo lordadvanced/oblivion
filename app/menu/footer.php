@@ -1,7 +1,7 @@
 <!-- BEGIN FOOTER -->
         <div class="footer">
             <div class="footer-inner">
-                Ye' Ye'
+                Professional Kitchen Management for University & College System
             </div>
             <div class="footer-tools">
                 <span class="go-top">

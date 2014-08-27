@@ -20,16 +20,18 @@
 															</div>
 															<div class="col-md-5">
 																<h3>
-																	<a href="page_blog_item.html">
+																	
 																		<?php echo $dish_list['dish_name'];?>
-																	</a>
+																
 																</h3>
 
 																<p>
 																	<?php echo $dish_list['dish_description'];?><br>
 																	<?php echo $t->_("dish_price");?>: 50,000 VND
 																</p>
-
+                                                               <?php
+            $access = $this->session->get('accessCode');
+             if(isset($access)){ ?>                                 
 																<div class="row">
 																	<div class="col-md-10 col-md-offset-1">
 																		<a class="btn order" href="#" onclick="add_cart();return false;">
@@ -40,6 +42,7 @@
 																		</a>
 																	</div>
 																</div>
+                                                                <? };?>
 															</div>
 		</div>
         	<div class="col-md-12">

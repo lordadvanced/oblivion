@@ -115,40 +115,14 @@ if (isset($access)) {
 																		 Balance: 
 																	</span><br> 
 																	<span class="sale-num">
-																		 350,000 VND
+																			<?php echo $user_profile["balance"];?> VND
+																	
 																	</span>
 										</strong>
 							<br><br><br>
-								<div class="caption" style="font-size:22px;">
-									Amount
-								</div>
-								<div class="tools">
-									<a class="reload" href="javascript:;">
-									</a>
-								</div>
+							
 							</div>
-							<div class="portlet-body">
-								<ul class="list-unstyled">
-									<li>
-										<span class="sale-info">
-										 To day spent: <i class="fa fa-img-up"></i>
-										</span>
-										<span class="sale-num">
-										45,000 VND
-										</span>
-									</li>
-									<li>
-																	<span class="sale-info">
-																		 Week spent: <i class="fa fa-img-down"></i>
-																	</span>
-																	<span class="sale-num">
-																		&nbsp; &nbsp; 220,000 VND
-																	</span>
-									</li>
-									<br><br>
-									
-								</ul>
-							</div> </div>
+						 </div>
                 </div>
 
             </div>
